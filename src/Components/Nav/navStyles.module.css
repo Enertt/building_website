@@ -1,0 +1,22 @@
+.navWrapper{
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navElement a{
+    text-decoration: none;
+    color: rgb(111, 114, 139);
+    font-size: 18px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.navElement{
+    transition: 0.3s;
+}
+.navElement:hover{
+    transform: scale(1.1);
+}
