@@ -94,6 +94,16 @@
     margin-bottom: 90px;
 }
 
+.fourthSection{
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 90px;
+    overflow: hidden;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;

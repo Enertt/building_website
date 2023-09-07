@@ -2,6 +2,7 @@ import Nav from "../Nav/Nav"
 import styles from './main.module.css'
 import CardAboutCompany from "../pages/AboutCompany/CardAboutCompany"
 import CardFaceOfConpany from "../pages/FaceOfCompany/CardFaceOfCompany"
+import OurOptions from "../OurOptions/OurOptions"
 
 const Main = () => {
     return(
@@ -34,6 +35,10 @@ const Main = () => {
 
             <div className={styles.thirdSection}>
                 <CardFaceOfConpany />
+            </div>
+
+            <div className={styles.fourthSection}>
+                <OurOptions />
             </div>
         </div>
     )

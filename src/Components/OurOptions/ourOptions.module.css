@@ -1,0 +1,28 @@
+.wrapper{
+    user-select: none;
+    width: 90%;
+    height: 100%;
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; */
+
+}
+
+.wrapper .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 50px;
+    font-weight: 600;
+    color: #31261A;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.wrapper .swiper{
+    margin-top: 70px;
+}
