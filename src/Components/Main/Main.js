@@ -3,6 +3,7 @@ import styles from './main.module.css'
 import CardAboutCompany from "../pages/AboutCompany/CardAboutCompany"
 import CardFaceOfConpany from "../pages/FaceOfCompany/CardFaceOfCompany"
 import OurOptions from "../OurOptions/OurOptions"
+import OurProjects from "../OurProjects/OurProjects"
 
 const Main = () => {
     return(
@@ -39,6 +40,10 @@ const Main = () => {
 
             <div className={styles.fourthSection}>
                 <OurOptions />
+            </div>
+
+            <div className={styles.fifthSection}>
+                <OurProjects />
             </div>
         </div>
     )
