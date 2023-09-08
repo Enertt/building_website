@@ -80,6 +80,9 @@
 .textWrapper p{
     line-height: 25px;
 }
+.footer{
+    width: 100%;
+}
 
 @keyframes fadeInUp {
     from {
