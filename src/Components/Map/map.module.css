@@ -30,3 +30,12 @@
     font-weight: 600;
     color: #31261A;
 }
+
+.mapsWrapper {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 100%;
+    height: 90%;
+    /* border: black solid 1px; */
+}
