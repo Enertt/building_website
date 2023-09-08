@@ -13,10 +13,12 @@ import sw4 from '../../assets/swiper/sw4.png'
 import sw5 from '../../assets/swiper/sw5.png'
 import styles from './swiper.module.css'
 
+import { NavLink } from 'react-router-dom'
+
 
 const SwiperComponent = () => {
-    return(
-      <Swiper
+  return (
+    <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={-30}
@@ -27,62 +29,75 @@ const SwiperComponent = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log('slide change')}
     >
-      <SwiperSlide>
-        <div className={styles.swiperItem}>
-          <img src={sw1}/>
-          <div className={styles.gradient}></div>
 
-          <div className={styles.textBlock}>
-            <div className={styles.title}>Some title</div>
-            <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+      <SwiperSlide>
+        <NavLink to='/aboutCompany'>
+          <div className={styles.swiperItem}>
+            <img src={sw1} />
+            <div className={styles.gradient}></div>
+
+            <div className={styles.textBlock}>
+              <div className={styles.title}>Some title</div>
+              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+            </div>
           </div>
-        </div>
+        </NavLink>
+      </SwiperSlide>
+
+
+      <SwiperSlide>
+        <NavLink to='/aboutCompany'>
+          <div className={styles.swiperItem}>
+            <img src={sw2} />
+            <div className={styles.gradient}></div>
+
+            <div className={styles.textBlock}>
+              <div className={styles.title}>Some title</div>
+              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+            </div>
+          </div>
+        </NavLink>
       </SwiperSlide>
       <SwiperSlide>
-      <div className={styles.swiperItem}>
-          <img src={sw2}/>
-          <div className={styles.gradient}></div>
+        <NavLink to='/aboutCompany'>
+          <div className={styles.swiperItem}>
+            <img src={sw3} />
+            <div className={styles.gradient}></div>
 
-          <div className={styles.textBlock}>
-            <div className={styles.title}>Some title</div>
-            <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+            <div className={styles.textBlock}>
+              <div className={styles.title}>Some title</div>
+              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+            </div>
           </div>
-        </div>
-        </SwiperSlide>
+        </NavLink>
+      </SwiperSlide>
       <SwiperSlide>
-      <div className={styles.swiperItem}>
-          <img src={sw3}/>
-          <div className={styles.gradient}></div>
+        <NavLink to='/aboutCompany'>
+          <div className={styles.swiperItem}>
+            <img src={sw4} />
+            <div className={styles.gradient}></div>
 
-          <div className={styles.textBlock}>
-            <div className={styles.title}>Some title</div>
-            <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+            <div className={styles.textBlock}>
+              <div className={styles.title}>Some title</div>
+              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+            </div>
           </div>
-        </div>
-        </SwiperSlide>
+        </NavLink>
+      </SwiperSlide>
       <SwiperSlide>
-      <div className={styles.swiperItem}>
-          <img src={sw4}/>
-          <div className={styles.gradient}></div>
+        <NavLink to='/aboutCompany'>
+          <div className={styles.swiperItem}>
+            <img src={sw5} />
+            <div className={styles.gradient}></div>
 
-          <div className={styles.textBlock}>
-            <div className={styles.title}>Some title</div>
-            <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+            <div className={styles.textBlock}>
+              <div className={styles.title}>Some title</div>
+              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+            </div>
           </div>
-        </div>
-        </SwiperSlide>
-      <SwiperSlide>
-      <div className={styles.swiperItem}>
-          <img src={sw5}/>
-          <div className={styles.gradient}></div>
-
-          <div className={styles.textBlock}>
-            <div className={styles.title}>Some title</div>
-            <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
-          </div>
-        </div>
-        </SwiperSlide>
+        </NavLink>
+      </SwiperSlide>
     </Swiper>
-    )
+  )
 }
 export default SwiperComponent
