@@ -1,0 +1,52 @@
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 50px;
+}
+
+.red, .yellow, .blue{
+    width: 100px;
+    height: 100px;
+    border-radius: 1rem;
+    background-color: #31261a;
+    
+}
+
+.red img{
+    position: absolute;
+}
+
+.container{
+    
+    display: flex;
+    width: 200%;
+    justify-content: space-around;
+
+}
+
+.title{
+    text-align: center;
+    font-size: 50px;
+    font-weight: 600;
+    color: #31261A;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card{
+    cursor: pointer;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.card:hover{
+    transform: scale(1.1);
+}
+
+.card h3{
+    text-align: center;
+    color: #31261a;
+}
