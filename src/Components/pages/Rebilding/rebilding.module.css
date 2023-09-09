@@ -81,6 +81,10 @@
     line-height: 25px;
 }
 
+.footer{
+    width: 100%;
+}
+
 @keyframes fadeInUp {
     from {
         opacity: 0.5;

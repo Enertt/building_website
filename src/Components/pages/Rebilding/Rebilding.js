@@ -38,8 +38,9 @@ const Rebilding = () => {
                         офісів).
                     </p>
                 </div>
+                <div className={styles.footer}><Footer/></div>
             </div>
-            <Footer/>
+            
         </div>
     )
 }
