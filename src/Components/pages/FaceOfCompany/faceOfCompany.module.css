@@ -101,7 +101,14 @@
 }
 .text{
     display: flex;
+    gap: 20px;
+
+    .textImg {
+        
+    }
 }
+
+
 
 
 .footer{
