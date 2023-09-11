@@ -10,45 +10,63 @@ import Header from "../Header/Header"
 
 const Main = () => {
     return(
-        <div className={styles.wrapper}>
-            <div className={styles.firstSection}>
+      <div className={styles.wrapper}>
+      <div className={`${styles.hero_section} ${styles.container}`}>
                 
                 {/* <Header color={''}/>  FOR BLACK*/}
                 {/* <Header color={'white'}/>  FOR WHITE*/}
                 <Header color={'white'}/> 
 
-                <span className={styles.title}>ТОВ «ВЛАСТ БУД»</span>
-            </div>
-            
-            <div className={styles.line}>
-                <span>ВЕЛИКИЙ ПОПИТ НА РИНКУ</span>
-                <span>ДОСТУПНI ЗА БЮДЖЕТОМ ФОРМАТИ</span>
-                <span>ДОСВIДЧЕНА УПРАВЛIНСЬКА КОМАНДА</span>
-            </div>
+        <span className={`${styles.hero_title} ${styles.uppercase_text}`}>
+          Тов «Власт Буд»
+        </span>
+      </div>
 
-            <div className={styles.secondSection}>
-                <CardAboutCompany />
-            </div>
+      <div className={styles.keyPoints}>
+        <span className={`${styles.uppercase_text} ${styles.keyPoints_span}`}>
+          Нерухомість та будівництво
+        </span>
+        <span className={`${styles.uppercase_text} ${styles.keyPoints_span}`}>
+          25 років на ринку
+        </span>
+        <span className={`${styles.uppercase_text} ${styles.keyPoints_span}`}>
+          Великий попит
+        </span>
+      </div>
 
-            <div className={styles.thirdSection}>
-                <CardFaceOfConpany />
-            </div>
-
-            <div className={styles.fourthSection}>
-                <OurOptions />
-            </div>
-
-            <div className={styles.fifthSection}>
-                <OurProjects />
-            </div>
-
-            <div className={styles.sixthSection}>
-                <Map />
-            </div>
-
-            <Footer />
+      <section className={styles.about_section}>
+        <div className={`${styles.container} ${styles.aboutSection_wraper}`}>
+          <CardAboutCompany />
         </div>
-    )
-}
+      </section>
 
-export default Main
+      <section className={styles.ceo_section}>
+        <div className={`${styles.container} ${styles.ceoSection_wraper}`}>
+          <CardFaceOfConpany />
+        </div>
+      </section>
+
+      <section className={styles.options_section}>
+        <div className={`${styles.container} ${styles.optionsSection_wraper}`}>
+          <OurOptions />
+        </div>
+      </section>
+
+      <section className={styles.projects_section}>
+        <div className={`${styles.container} ${styles.projectsSection_wraper}`}>
+          <OurProjects />
+        </div>
+      </section>
+
+      <section className={styles.map_section}>
+        <div className={`${styles.container} ${styles.mapSection_wraper}`}>
+          <Map />
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Main;

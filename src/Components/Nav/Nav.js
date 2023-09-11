@@ -1,5 +1,5 @@
-import styles from './navStyles.module.css'
-import { NavLink } from 'react-router-dom'
+import styles from "./navStyles.module.css";
+import { NavLink } from "react-router-dom";
 
 const Nav = (props) => {
     if(props.color === 'white'){
@@ -28,4 +28,4 @@ const Nav = (props) => {
     
 }
 
-export default Nav
+export default Nav;
