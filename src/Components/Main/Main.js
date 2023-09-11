@@ -9,13 +9,13 @@ import Footer from "../Footer/Footer"
 import Header from "../Header/Header"
 
 const Main = () => {
-    return(
-      <div className={styles.wrapper}>
+  return (
+    <div className={styles.wrapper}>
       <div className={`${styles.hero_section} ${styles.container}`}>
-                
-                {/* <Header color={''}/>  FOR BLACK*/}
-                {/* <Header color={'white'}/>  FOR WHITE*/}
-                <Header color={'white'}/> 
+
+        {/* <Header color={''}/>  FOR BLACK*/}
+        {/* <Header color={'white'}/>  FOR WHITE*/}
+        <Header color={'white'} />
 
         <span className={`${styles.hero_title} ${styles.uppercase_text}`}>
           Тов «Власт Буд»
