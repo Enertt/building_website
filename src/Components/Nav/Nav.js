@@ -1,17 +1,28 @@
-import styles from './navStyles.module.css'
-import { NavLink } from 'react-router-dom'
+import styles from "./navStyles.module.css";
+import { NavLink } from "react-router-dom";
 
 const Nav = () => {
-    return(
-        <div className={styles.navWrapper}>
-            <div className={styles.navElement}><NavLink to='/aboutCompany'>ПРО КОМПАНIЮ</NavLink></div>
-            <div className={styles.navElement}><NavLink to='/realizedProjects'>НАШI ПРОЕКТИ</NavLink></div>
-            <div className={styles.navElement}><NavLink to='/faceOfCompany'>ОБЛИЧЧЯ КОМПАНIЇ</NavLink></div>
-            {/* <div className={styles.navElement}><NavLink to='/currentlyBilding'>Об‘єкти які ми зараз будуємо</NavLink></div>
-            <div className={styles.navElement}><NavLink to='/rebilding'>Об‘єкти які відбудовуємо</NavLink></div> */}
-            <div className={styles.navElement}><NavLink to='/contacts'>КОНТАКТИ</NavLink></div>
-        </div>
-    )
-}
+  return (
+    <nav className={styles.navWrapper}>
+      <ul className={styles.navList}>
+        <li className={`${styles.navItem} ${styles.uppercase_text}`}>
+          <NavLink to="/aboutCompany">Про компанію</NavLink>
+        </li>
+        <li className={`${styles.navItem} ${styles.uppercase_text}`}>
+          <NavLink to="/realizedProjects">Наші проєкти</NavLink>
+        </li>
+        <li className={`${styles.navItem} ${styles.uppercase_text}`}>
+          <NavLink to="/faceOfCompany">Обличчя компанії</NavLink>
+        </li>
+        {/*<li className={styles.navItem}><NavLink to='/currentlyBuilding'>CURRENT PROJECTS</NavLink></li>
+      <li className={styles.navItem}><NavLink to='/rebuilding'>REBUILDING PROJECTS</NavLink></li>
+       */}
+        <li className={`${styles.navItem} ${styles.uppercase_text}`}>
+          <NavLink to="/contacts">Контакти</NavLink>
+        </li>
+      </ul>
+    </nav>
+  );
+};
 
-export default Nav
+export default Nav;
