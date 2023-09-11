@@ -21,7 +21,7 @@ const SwiperComponent = () => {
     <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={-30}
+      spaceBetween={0}
       slidesPerView={3}
       navigation
       pagination={{ clickable: true }}
@@ -32,6 +32,7 @@ const SwiperComponent = () => {
 
       <SwiperSlide>
         <NavLink to='/aboutCompany'>
+        <div className={styles.slideWrapper}>
           <div className={styles.swiperItem}>
             <img src={sw1} />
             <div className={styles.gradient}></div>
@@ -41,25 +42,30 @@ const SwiperComponent = () => {
               <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
             </div>
           </div>
-        </NavLink>
-      </SwiperSlide>
-
-
-      <SwiperSlide>
-        <NavLink to='/aboutCompany'>
-          <div className={styles.swiperItem}>
-            <img src={sw2} />
-            <div className={styles.gradient}></div>
-
-            <div className={styles.textBlock}>
-              <div className={styles.title}>Some title</div>
-              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
-            </div>
           </div>
         </NavLink>
       </SwiperSlide>
+
+
       <SwiperSlide>
         <NavLink to='/aboutCompany'>
+          <div className={styles.slideWrapper}>
+            <div className={styles.swiperItem}>
+              <img src={sw2} />
+              <div className={styles.gradient}></div>
+
+              <div className={styles.textBlock}>
+                <div className={styles.title}>Some title</div>
+                <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+              </div>
+            </div>
+          </div>
+          
+        </NavLink>
+      </SwiperSlide>
+      <SwiperSlide>
+        <NavLink to='/aboutCompany'>
+        <div className={styles.slideWrapper}>
           <div className={styles.swiperItem}>
             <img src={sw3} />
             <div className={styles.gradient}></div>
@@ -69,10 +75,12 @@ const SwiperComponent = () => {
               <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
             </div>
           </div>
+          </div>
         </NavLink>
       </SwiperSlide>
       <SwiperSlide>
         <NavLink to='/aboutCompany'>
+        <div className={styles.slideWrapper}>
           <div className={styles.swiperItem}>
             <img src={sw4} />
             <div className={styles.gradient}></div>
@@ -82,10 +90,12 @@ const SwiperComponent = () => {
               <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
             </div>
           </div>
+          </div>
         </NavLink>
       </SwiperSlide>
       <SwiperSlide>
         <NavLink to='/aboutCompany'>
+        <div className={styles.slideWrapper}>
           <div className={styles.swiperItem}>
             <img src={sw5} />
             <div className={styles.gradient}></div>
@@ -94,6 +104,7 @@ const SwiperComponent = () => {
               <div className={styles.title}>Some title</div>
               <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
             </div>
+          </div>
           </div>
         </NavLink>
       </SwiperSlide>

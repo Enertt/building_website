@@ -6,22 +6,16 @@ import OurOptions from "../OurOptions/OurOptions"
 import OurProjects from "../OurProjects/OurProjects"
 import Map from "../Map/Map"
 import Footer from "../Footer/Footer"
+import Header from "../Header/Header"
 
 const Main = () => {
     return(
         <div className={styles.wrapper}>
             <div className={styles.firstSection}>
-                <header className={styles.header}>
-
-                    <div className={styles.logo}>
-                        <span>ВЛАСТ</span>
-                        <span>БУД</span>
-                    </div>
-                    
-                    <div className={styles.navigation}>
-                        <Nav />
-                    </div>
-                </header>
+                
+                {/* <Header color={''}/>  FOR BLACK*/}
+                {/* <Header color={'white'}/>  FOR WHITE*/}
+                <Header color={'white'}/> 
 
                 <span className={styles.title}>ТОВ «ВЛАСТ БУД»</span>
             </div>

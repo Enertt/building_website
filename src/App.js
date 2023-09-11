@@ -14,9 +14,9 @@ function App() {
       <Routes>
         <Route path="/aboutCompany" element={ <AboutCompanyContainer />} />
         <Route path="/faceOfCompany" element={ <FaceOfCompanyContainer />} />
-        <Route path="/realizedProjects" element={ <RealizedProjectsContainer />} />
-        <Route path="/currentlyBilding" element={ <CurrentlyBuildingContainer />} />
-        <Route path="/rebilding" element={ <RebildingContainer />} />
+        <Route path="/projects" element={ <RealizedProjectsContainer />} />
+        {/* <Route path="/currentlyBilding" element={ <CurrentlyBuildingContainer />} />
+        <Route path="/rebilding" element={ <RebildingContainer />} /> */}
         <Route path="/contacts" element={ <ContactsContainer />} />
         <Route path="/" element={ <Main />} />
       </Routes>

@@ -7,27 +7,16 @@ import img2 from '../../../assets/swiper/sw2.png'
 import img3 from '../../../assets/swiper/sw3.png'
 import img4 from '../../../assets/swiper/sw4.png'
 import img5 from '../../../assets/swiper/sw5.png'
+import Header from '../../Header/Header'
 
 const AboutCompany = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.firstSection}>
-                <header className={styles.header}>
 
-                    
-                        <NavLink to='/'>
-                        <div className={styles.logo}>
-                            <span>ВЛАСТ</span>
-                            <span>БУД</span>
-                            </div>
-                        </NavLink>
-                       
-                    
-                    
-                    <div className={styles.navigation}>
-                        <Nav />
-                    </div>
-                </header>
+                {/* <Header color={''}/>  FOR BLACK*/}
+                {/* <Header color={'white'}/>  FOR WHITE*/}
+                <Header color={'white'}/>
 
                 <div className={styles.textWrapper}>
                     <div className={styles.aboutCompany}>

@@ -2,27 +2,16 @@ import styles from './contacts.module.css'
 import { NavLink } from 'react-router-dom'
 import Nav from '../../Nav/Nav'
 import Footer from '../../Footer/Footer'
+import Header from '../../Header/Header'
 
 const Contacts = () => {
     return (
         <div className={styles.wrapper}>
             <div className={styles.firstSection}>
-                <header className={styles.header}>
 
-
-                    <NavLink to='/'>
-                        <div className={styles.logo}>
-                            <span>ВЛАСТ</span>
-                            <span>БУД</span>
-                        </div>
-                    </NavLink>
-
-
-
-                    <div className={styles.navigation}>
-                        <Nav />
-                    </div>
-                </header>
+                {/* <Header color={''}/>  FOR BLACK*/}
+                {/* <Header color={'white'}/>  FOR WHITE*/}
+                <Header color={'white'}/>
 
                 <div className={styles.textWrapper}>
                     <div className={styles.content}>

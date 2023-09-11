@@ -7,7 +7,7 @@ const OurProjects = () => {
               <h2 className={styles.title}>Наші роботи</h2>
               <div className={styles.container}>
         
-                <NavLink to='/realizedProjects'>
+                <NavLink to='/projects'>
                   <div className={styles.card}>
                     <div className={styles.red}>
                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 2" viewBox="0 0 100 125" x="0px" y="0px">
@@ -20,7 +20,7 @@ const OurProjects = () => {
                   </div>
                 </NavLink>
         
-                <NavLink to='/currentlyBilding'>
+                <NavLink to='/projects'>
                   <div className={styles.card}>
                     <div className={styles.yellow}>
                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 64 80" x="0px" y="0px">
@@ -31,7 +31,7 @@ const OurProjects = () => {
                   </div>
                 </NavLink>
         
-                <NavLink to='/rebilding'>
+                <NavLink to='/projects'>
                   <div className={styles.card}>
                     <div className={styles.blue}>
                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 64 80" x="0px" y="0px">
