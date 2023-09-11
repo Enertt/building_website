@@ -23,7 +23,7 @@ const Nav = (props) => {
           <NavLink to="/aboutCompany">Про компанію</NavLink>
         </li>
         <li className={`${styles.navItem} ${styles.uppercase_text}`}>
-          <NavLink to="/realizedProjects">Наші проєкти</NavLink>
+          <NavLink to="/projects">Наші проєкти</NavLink>
         </li>
         <li className={`${styles.navItem} ${styles.uppercase_text}`}>
           <NavLink to="/faceOfCompany">Обличчя компанії</NavLink>
