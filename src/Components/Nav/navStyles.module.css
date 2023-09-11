@@ -1,46 +1,77 @@
-.navWrapper{
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-
-    .navElement a{
-        text-decoration: none;
-        color: rgb(255, 255, 255);
-        font-size: 18px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-    }
-    .navElement{
-        transition: 0.3s;
-    }
-    .navElement:hover{
-        transform: scale(1.1);
-    }
+.navWrapper,
+.navList {
+  width: 100%;
+  height: 100%;
+}
+.navList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+.navItem a {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: "Poppins", sans-serif;
+}
+.navItem {
+  transition: 0.3s;
+}
+.navItem:hover {
+  transform: scale(1.1);
+}
+.uppercase_text {
+  text-transform: uppercase;
+}
+.hero_navlinkColor a {
+  color: rgb(0, 0, 0);
 }
 
-.navWrapperB{
-    width: 100%;
-    height: 100%;
+/* 
+.navWrapper {
+  width: 100%;
+  height: 100%;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    .navElement a{
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-        font-size: 18px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-    }
-    .navElement{
-        transition: 0.3s;
-    }
-    .navElement:hover{
-        transform: scale(1.1);
-    }
-}
+  .navElement a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  .navElement {
+    transition: 0.3s;
+  }
+  .navElement:hover {
+    transform: scale(1.1);
+  }
+} */
+
+/* .navWrapperB {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .navElement a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  .navElement {
+    transition: 0.3s;
+  }
+  .navElement:hover {
+    transform: scale(1.1);
+  }
+} */

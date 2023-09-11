@@ -1,21 +1,20 @@
-import Nav from "../Nav/Nav"
-import styles from './main.module.css'
-import CardAboutCompany from "../pages/AboutCompany/CardAboutCompany"
-import CardFaceOfConpany from "../pages/FaceOfCompany/CardFaceOfCompany"
-import OurOptions from "../OurOptions/OurOptions"
-import OurProjects from "../OurProjects/OurProjects"
-import Map from "../Map/Map"
-import Footer from "../Footer/Footer"
-import Header from "../Header/Header"
+import Nav from "../Nav/Nav";
+import styles from "./main.module.css";
+import CardAboutCompany from "../pages/AboutCompany/CardAboutCompany";
+import CardFaceOfConpany from "../pages/FaceOfCompany/CardFaceOfCompany";
+import OurOptions from "../OurOptions/OurOptions";
+import OurProjects from "../OurProjects/OurProjects";
+import Map from "../Map/Map";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
 
 const Main = () => {
-    return(
-      <div className={styles.wrapper}>
+  return (
+    <div className={styles.wrapper}>
       <div className={`${styles.hero_section} ${styles.container}`}>
-                
-                {/* <Header color={''}/>  FOR BLACK*/}
-                {/* <Header color={'white'}/>  FOR WHITE*/}
-                <Header color={'white'}/> 
+        {/* <Header color={''}/>  FOR BLACK*/}
+        {/* <Header color={'white'}/>  FOR WHITE*/}
+        <Header color={"white"} />
 
         <span className={`${styles.hero_title} ${styles.uppercase_text}`}>
           Тов «Власт Буд»
