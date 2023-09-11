@@ -96,11 +96,11 @@
 }
 
 .aboutSection_wraper {
-  height: 70vh;
+  height: 500px;
 }
 
 .ceoSection_wraper {
-  height: 75vh;
+  height: 500px;
 }
 
 .optionsSection_wraper,
@@ -110,15 +110,15 @@
 }
 
 .optionsSection_wraper {
-  height: 90vh;
+  height: 600px;
 }
 
 .projectsSection_wraper {
-  height: 45vh;
+  height: 300px;
 }
 
 .mapSection_wraper {
-  height: 70vh;
+  height: 460px;
 }
 
 @keyframes fadeInUp {
