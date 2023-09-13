@@ -14,15 +14,41 @@ import sw5 from '../../assets/swiper/sw5.png'
 import styles from './swiper.module.css'
 
 import { NavLink } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
 
 
 const SwiperComponent = () => {
+
+  let slideCount = 3
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    // Функция, которая обновляет значение ширины окна при изменении размера окна
+    const updateWindowWidth = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Добавляем слушателя события изменения размера окна
+    window.addEventListener('resize', updateWindowWidth);
+
+    // Убираем слушателя события при размонтировании компонента
+    return () => {
+      window.removeEventListener('resize', updateWindowWidth);
+    };
+  }, []);
+
+  if(windowWidth >= 1041){
+    slideCount = 3
+  }else{
+    slideCount = 1
+  }
+
   return (
     <Swiper
       // install Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={0}
-      slidesPerView={3}
+      slidesPerView={slideCount}
       navigation
       pagination={{ clickable: true }}
       // scrollbar={{ draggable: true }}

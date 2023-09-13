@@ -14,7 +14,9 @@ const Main = () => {
       <div className={`${styles.hero_section} ${styles.container}`}>
         {/* <Header color={''}/>  FOR BLACK*/}
         {/* <Header color={'white'}/>  FOR WHITE*/}
+        
         <Header color={"white"} />
+        
 
         <span className={`${styles.hero_title} ${styles.uppercase_text}`}>
           <span>Тов</span>

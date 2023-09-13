@@ -161,8 +161,36 @@
 }
 
 @media (max-width: 650px) {
+  .aboutSection_wraper {
+    height: 400px;
+  }
   .hero_title{
     flex-direction: column;
     align-items: center;
+  }
+  .hero_title span{
+    font-size: 60px;
+  }
+  .keyPoints{
+    height: 40px;
+  }
+  .keyPoints_span{
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .keyPoints_span{
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 450px){
+  .hero_title span{
+    font-size: 45px;
+  }
+
+  .keyPoints_span{
+    font-size: 8px;
   }
 }

@@ -8,12 +8,12 @@
 }
 
 .header {
-  width: 85%;
+  width: 100%;
   position: absolute;
   top: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
   .logo {
     display: flex;
@@ -42,10 +42,10 @@
 }
 
 .navigation {
-  width: 79%;
+  width: 60%;
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 
   transform: translateY(20px);
   opacity: 0;
