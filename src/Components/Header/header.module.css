@@ -52,6 +52,14 @@
   animation: fadeInUp2 0.5s ease-in-out forwards;
 }
 
+.navigationSmall{
+  width: 20%;
+  height: 100px;
+  display: none;
+  /* display: flex;
+  justify-content: center; */
+}
+
 @keyframes fadeInUp2 {
   from {
     opacity: 0;
@@ -60,5 +68,23 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 900px) {
+  .logo span {
+    font-size: 18px;
+  }
+  .logoB span {
+    font-size: 18px;
+  }
+  .navigation{
+    display: none;
+  }
+  .navigationSmall{
+    display: flex;
+    align-items: center;
+    justify-content: end;
   }
 }

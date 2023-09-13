@@ -17,7 +17,8 @@ const Main = () => {
         <Header color={"white"} />
 
         <span className={`${styles.hero_title} ${styles.uppercase_text}`}>
-          Тов «Власт Буд»
+          <span>Тов</span>
+          <span>«Власт Буд»</span>
         </span>
       </div>
 
