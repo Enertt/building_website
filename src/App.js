@@ -6,12 +6,14 @@ import RealizedProjectsContainer from './Components/pages/RealizedProjects/Reali
 import CurrentlyBuildingContainer from './Components/pages/CurrentlyBuilding/CurrentlyBuildingContainer';
 import RebildingContainer from './Components/pages/Rebilding/RebildingContainer';
 import ContactsContainer from './Components/pages/Сontacts/ContactsContainer';
+import NewsContainer from './Components/pages/News/NewsContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
       <Routes>
+        <Route path="/news" element={ <NewsContainer />} />
         <Route path="/aboutCompany" element={ <AboutCompanyContainer />} />
         <Route path="/faceOfCompany" element={ <FaceOfCompanyContainer />} />
         <Route path="/projects" element={ <RealizedProjectsContainer />} />
