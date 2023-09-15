@@ -7,6 +7,8 @@ import CurrentlyBuildingContainer from './Components/pages/CurrentlyBuilding/Cur
 import RebildingContainer from './Components/pages/Rebilding/RebildingContainer';
 import ContactsContainer from './Components/pages/Сontacts/ContactsContainer';
 import NewsContainer from './Components/pages/News/NewsContainer';
+import AdminContainer from './Components/Admin/AdminContainer';
+import AdminPageContainer from './Components/Admin/AdminPageContainer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         {/* <Route path="/currentlyBilding" element={ <CurrentlyBuildingContainer />} />
         <Route path="/rebilding" element={ <RebildingContainer />} /> */}
         <Route path="/contacts" element={ <ContactsContainer />} />
+        <Route path="/adminLogined" element={ <AdminPageContainer />} />
+        <Route path="/admin" element={ <AdminContainer />} />
         <Route path="/" element={ <Main />} />
       </Routes>
     </div>
