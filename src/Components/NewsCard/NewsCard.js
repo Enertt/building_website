@@ -14,7 +14,7 @@ const NewsCard = (props) => {
                             )
                         } else if (element.type === "photo") {
                             return (
-                                <img src={element.src} className={element.style === "L" ? styles.photoL : styles.photoR} />
+                                <img src={require(`../../assets/news/${element.src}`)} className={element.style === "L" ? styles.photoL : styles.photoR} />
                             )
                         }
                     })}

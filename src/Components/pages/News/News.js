@@ -19,7 +19,7 @@ const News = () => {
                 setPropsState({ title: element.title, body: element.body })
             }} className={styles.newsElement}>
                 <div className={styles.img}>
-                    <img src={element.photoSmall} />
+                    <img src={require(`../../../assets/news/${element.photoSmall}`)} />
                 </div>
 
                 <span>{element.title}</span>

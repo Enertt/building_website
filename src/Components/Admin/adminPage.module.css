@@ -44,7 +44,6 @@
     background-color: rgb(253, 253, 253);
     border-radius: 10px;
     box-shadow: inset 0 0 5px rgb(131, 131, 131);
-    
 }
 
 .newsElement{
@@ -67,7 +66,6 @@
 }
 
 .searcher{
-
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -95,7 +93,6 @@
     border-radius: 10px;
     border: rgb(175, 175, 175) solid 1px;
     padding: 0 3% 0 3%;
-    
 }
 
 .searcherBlock input::placeholder{
@@ -170,8 +167,15 @@
 }
 
 .addNewContent svg{
+    cursor: pointer;
     position: absolute;
     top: 10px;
     right: 10px;
     color: black;
+    transition: 0.3s;
+}
+.addNewContent svg:hover{
+    box-shadow: 0 0 10px rgb(238, 238, 238);
+    background-color: rgb(238, 238, 238);
+    transform: scale(1.1);
 }
