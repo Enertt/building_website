@@ -1,12 +1,15 @@
 import styles from './adminPage.module.css'
 import dataJson from '../pages/News/news.json'
 import AddNewForm from './AddNewForm'
+import deleteUserById from './JsScripts/deleteUser'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
 const AdminPage = (props) => {
     const [addNewFormState, setAddNewFormState] = useState(false)
+
+    const [deleteState, setDeleteState] = useState({ state: false, id: 0})
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -19,7 +22,7 @@ const AdminPage = (props) => {
         return(
             <div className={styles.newsElement}>
                 <span>{`id: ${element.id} | ${element.title} | ${element.date}`}</span>
-                <button>DEL</button>
+                <button onClick={()=>{setDeleteState({state: true, id: element.id})}}>DEL</button>
                 <button>MOD</button>
             </div>
             
@@ -36,7 +39,6 @@ const AdminPage = (props) => {
     }
     
     if(props.isAuth){
-        console.log(props.isAuth)
         return(
             <div className={styles.wrapper}>
                 <div className={styles.newsListContent}>
@@ -49,27 +51,6 @@ const AdminPage = (props) => {
                         </div>
                     <button onClick={() => {setAddNewFormState(true)}} className={styles.addNewButton}>Додати новину</button>
                 </div>
-                
-
-                {/* <div className={styles.newsSearcher}>
-                    <div className={styles.searcher}>
-                        <span  className={styles.searcherTitle}>Пошук новин</span>
-                        <div className={styles.searcherBlock}>
-                            <div className={styles.searcherBlockButtons}>
-                                <button className={styles.buttonSearch}>За Id</button>
-                                <button className={styles.buttonSearch}>За Назвою</button>
-                                <button className={styles.buttonSearch}>За Датою</button>
-                            </div>
-                            <input placeholder='Даннi для пошуку'></input>
-                            <div className={styles.searchResult}>
-                                <span className={styles.searchResultTitle}>Результати пошуку</span>
-                                <div className={styles.searchResultBlock}>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> */}
 
 
 
@@ -78,6 +59,23 @@ const AdminPage = (props) => {
                     <div className={styles.addNewContent}>
                         
                         <AddNewForm setAddNewFormState={setAddNewFormState} maxId={maxId}/>
+                    </div>
+                </div>
+
+
+                <div className={deleteState.state ? styles.deleteWrapper : styles.deleteWrapperNone}>
+                    <div className={styles.deletingForm}>
+                        <span className={styles.deletingForm_span}>{`Видалити новину з id: ${deleteState.id}`}</span>
+                        <div className={styles.deletingForm_buttonWrapper}>
+                            <button onClick={()=>{
+                                deleteUserById(deleteState.id)
+                                setDeleteState({state: false, id: 0})
+                            }} className={styles.deletingForm_button}> Видалити </button>
+                            <button onClick={()=>{
+                                
+                                setDeleteState({state: false, id: 0})
+                                }} className={styles.deletingForm_button}>Повернутись</button>
+                        </div>
                     </div>
                 </div>
             </div>

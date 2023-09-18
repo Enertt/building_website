@@ -179,3 +179,55 @@
     background-color: rgb(238, 238, 238);
     transform: scale(1.1);
 }
+
+.deleteWrapperNone{
+    display: none;
+}
+
+.deleteWrapper{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.849);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deletingForm{
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.deletingForm_buttonWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.deletingForm_span{
+    font-size: 23px;
+}
+.deletingForm_button{
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 30%;
+    border: rgb(121, 121, 121) solid 1px;
+    transition: 0.2s;
+}
+
+.deletingForm_button:hover{
+    transform: scale(1.05);
+}
