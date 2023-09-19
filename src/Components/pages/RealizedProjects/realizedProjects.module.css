@@ -190,3 +190,27 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 1000px) {
+    .textWrapper{
+        font-size: 15px;
+        width: 80%;
+    }
+    .aboutCompany span{
+        color: #31261A;
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .ourOptions span{
+        color: #31261A;
+        font-size: 24px;
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 500px) {
+    .textWrapper{
+        font-size: 13px;
+        width: 85%;
+    }
+}
