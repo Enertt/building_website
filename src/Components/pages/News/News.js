@@ -2,32 +2,40 @@ import styles from './news.module.css'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
 import NewsCard from '../../NewsCard/NewsCard'
-import newsJson from './news.json'
+import { API } from '../../../api/api'
+// import newsJson from './news.json'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
-const News = () => {
+const News = (props) => {
+props.getNewsThunkCreator();
 
     const [propsState, setPropsState] = useState({ title: '', body: [] })
     const [visibilityState, setVisibilityState] = useState({ pageVisibility: true, newsVisibility: false })
 
-    const news = newsJson.map((element) => {
-        return (
-            <div onClick={() => {
-                setVisibilityState({ pageVisibility: false, newsVisibility: true })
-                setPropsState({ title: element.title, body: element.body })
-            }} className={styles.newsElement}>
-                <div className={styles.img}>
-                    <img src={require(`../../../assets/news/${element.photoSmall}`)} />
+
+    const news = props.newsData ? (
+        props.newsData.map((element) => {
+            return (
+                <div onClick={() => {
+                    setVisibilityState({ pageVisibility: false, newsVisibility: true })
+                    setPropsState({ title: element.title, body: element.body })
+                }} className={styles.newsElement}>
+                    <div className={styles.img}>
+                        <img src={require(`../../../assets/news/${element.photoSmall}`)} />
+                    </div>
+    
+                    <span>{element.title}</span>
+    
+                    <span className={styles.date}>{element.date}</span>
                 </div>
-
-                <span>{element.title}</span>
-
-                <span className={styles.date}>{element.date}</span>
-            </div>
-        )
-    })
+            );
+        })
+    ) : (
+        
+        <div>Loading...</div>
+    );
     return (
         <div className={styles.wrapper}>
             <div className={styles.firstSection}>
