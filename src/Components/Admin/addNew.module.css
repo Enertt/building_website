@@ -1,0 +1,242 @@
+.wrapper{
+    position: relative;
+    width: 90%;
+    height: 90%;
+    /* border: black solid 1px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.buttonSave{
+    width: 40%;
+    height: 10%;
+    font-size: large;
+    border-radius: 10px;
+    border: rgb(173, 173, 173) solid 1px;
+    background-color: rgba(47, 255, 82, 0.555);
+    transition: 0.3s;
+}
+.buttonSave:hover{
+    transform: scale(1.05);
+}
+
+.formTitle{
+    font-size: larger;
+}
+
+.contentBlock{
+    width: 100%;
+    height: 80%;
+    background-color: rgb(253, 253, 253);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgb(131, 131, 131);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.addButtonBlock{
+    margin-top: 10px;
+    width: 80%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.titleInput{
+    width: 60%;
+    height: 10%;
+    padding: 5px;
+    border-radius: 20px;
+    border: rgb(173, 173, 173) solid 1px;
+    font-size: 20px;
+}
+
+.titleInput::placeholder{
+    color: rgb(202, 202, 202);
+}
+.addContentButton{
+    cursor: pointer;
+    width: 40%;
+    height: 100%;
+    border-radius: 15px;
+    border: rgb(173, 173, 173) solid 1px;
+    transition: 0.3s;
+}
+.addedItemsList{
+    border:  rgb(170, 170, 170) dashed 1px;
+    width: 80%;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+
+}
+.previevSpan{
+    width: 90%;
+    font-size: 10px;
+}
+.previevBlockL{
+    border: black dashed 1px;
+    width: 30%;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    float: left;
+}
+
+.previevBlockR{
+    border: black dashed 1px;
+    width: 30%;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    float: right;
+}
+
+.addContentButton:hover{
+    transform: scale(1.05);
+}
+
+.addPWrapperNone{
+    display: none;
+}
+
+.addPWrapper{
+    position: absolute;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+    border-radius: 15px;
+    transform: scale(1.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addImgWrapperNone{
+    display: none;
+}
+
+.addImgWrapper{
+    position: absolute;
+    padding: 15px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 5px rgb(80, 80, 80);
+    border-radius: 15px;
+    transform: scale(1.15);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+}
+
+.imgWrapperBlock{
+    width: 100%;
+    height: 60%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.sideButton{
+    cursor: pointer;
+    width: 20%;
+    height: 20%;
+    border-radius: 15px;
+    border: rgb(160, 160, 160) solid 1px;
+    opacity: 0.3;
+    transition: 0.3s;
+}
+.sideButtonActive{
+    cursor: pointer;
+    width: 20%;
+    height: 20%;
+    border-radius: 15px;
+    border: rgb(14, 14, 14) solid 1px;
+    background-color: rgb(148, 148, 148);
+    transition: 0.3s;
+}
+
+.sideButton:hover, .sideButtonActive:hover{
+    transform: scale(1.05);
+}
+.imgWrapper{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    border: black dashed 1px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.img{
+
+    
+    
+    
+    
+}
+
+.textareaP{
+    margin-top: 20px;
+    padding: 10px;
+    resize: none;
+    width: 80%;
+    height: 60%;
+}
+
+.saveButtonP{
+    margin-top: 20px;
+    width: 40%;
+    height: 10%;
+    font-size: large;
+    border-radius: 10px;
+    border: rgb(173, 173, 173) solid 1px;
+    background-color: rgba(47, 255, 82, 0.555);
+    transition: 0.3s;
+}
+
+.saveButtonP:hover{
+    transform: scale(1.05);
+}
+
+.saveButtonImg{
+    margin-top: 20px;
+    width: 40%;
+    height: 10%;
+    font-size: large;
+    border-radius: 10px;
+    border: rgb(173, 173, 173) solid 1px;
+    background-color: rgba(47, 255, 82, 0.555);
+    transition: 0.3s;
+}
+
+.saveButtonImg:hover{
+    transform: scale(1.05);
+}
+
+.inputImg{
+    margin-top: 20px;
+}
+

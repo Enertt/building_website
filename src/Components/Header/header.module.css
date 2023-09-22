@@ -8,12 +8,12 @@
 }
 
 .header {
-  width: 85%;
+  width: 100%;
   position: absolute;
   top: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 
   .logo {
     display: flex;
@@ -33,23 +33,35 @@
   color: rgb(255, 255, 255);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
 }
 .logoB span {
   font-size: 22px;
   color: rgb(0, 0, 0);
   font-family: "Poppins", sans-serif;
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
 }
 
 .navigation {
-  width: 79%;
+  width: 60%;
   height: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 
   transform: translateY(20px);
   opacity: 0;
   animation: fadeInUp2 0.5s ease-in-out forwards;
+}
+
+.navigationSmall{
+  width: 20%;
+  height: 100px;
+  display: none;
+  /* display: flex;
+  justify-content: center; */
 }
 
 @keyframes fadeInUp2 {
@@ -60,5 +72,23 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 1150px) {
+  .logo span {
+    font-size: 18px;
+  }
+  .logoB span {
+    font-size: 18px;
+  }
+  .navigation{
+    display: none;
+  }
+  .navigationSmall{
+    display: flex;
+    align-items: center;
+    justify-content: end;
   }
 }

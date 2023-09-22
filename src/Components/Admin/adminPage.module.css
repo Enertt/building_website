@@ -1,0 +1,233 @@
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.newsListContent{
+    padding: 10px;
+    position: relative;
+    width: 40%;
+    height: 80%;
+    /* border:  black solid 1px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.addNewButton{
+    cursor: pointer;
+    width: 50%;
+    height: 10%;
+    border-radius: 15px;
+    border: rgb(177, 177, 177) solid 1px;
+    background-color: rgba(47, 255, 82, 0.555);
+    font-size: 18px;
+    transition: 0.2s;
+}
+.addNewButton:hover{
+    transform: scale(1.05);
+}
+.newsList{
+    width: 100%;
+    height: 70%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px 0 20px 0;
+    background-color: rgb(253, 253, 253);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgb(131, 131, 131);
+}
+
+.newsElement{
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+.newsElement button{
+    cursor: pointer;
+}
+
+.newsListTitle, .searcherTitle, .searchResultTitle{
+    font-size: larger;
+}
+
+.newsListBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searcher{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.searcherBlock{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .searcherBlockButtons{
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.searcherBlock input{
+    width: calc(70% - 6%);
+    height: 30px;
+    border-radius: 10px;
+    border: rgb(175, 175, 175) solid 1px;
+    padding: 0 3% 0 3%;
+}
+
+.searcherBlock input::placeholder{
+    color: rgb(194, 194, 194);
+    font-weight: 400;
+}
+
+.buttonSearch{
+    cursor: pointer;
+    width: 100px;
+    padding: 5px;
+    border-radius: 10px;
+    border: rgb(175, 175, 175) solid 1px;
+    transition: 0.2s;
+    font-size: 15px;
+}
+
+.buttonSearch:hover{
+    transform: scale(1.05);
+}
+
+.newsSearcher{
+    padding: 10px;
+    width: 40%;
+    height: 80%;
+    /* border:  black solid 1px; */
+}
+
+.searchResult{
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.searchResultBlock{
+    padding: 10px;
+    background-color: rgb(253, 253, 253);
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgb(131, 131, 131);
+    width: 100%;
+    height: 300px;
+}
+.addNewWrapperNone{
+    display: none;
+}
+
+.addNewWrapper{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.63);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addNewContent{
+    position: relative;
+    width: 60%;
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 0 0 5px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.addNewContent svg{
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: black;
+    transition: 0.3s;
+}
+.addNewContent svg:hover{
+    box-shadow: 0 0 10px rgb(238, 238, 238);
+    background-color: rgb(238, 238, 238);
+    transform: scale(1.1);
+}
+
+.deleteWrapperNone{
+    display: none;
+}
+
+.deleteWrapper{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.849);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deletingForm{
+    width: 30%;
+    height: 30%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.deletingForm_buttonWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.deletingForm_span{
+    font-size: 23px;
+}
+.deletingForm_button{
+    cursor: pointer;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    width: 30%;
+    border: rgb(121, 121, 121) solid 1px;
+    transition: 0.2s;
+}
+
+.deletingForm_button:hover{
+    transform: scale(1.05);
+}

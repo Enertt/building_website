@@ -102,7 +102,6 @@
 }
 
 .ourOptions{
-    
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -147,7 +146,7 @@
     font-size: 30px;
 }
 .optionCardR img{
-    position: absolute;
+    
     right: 0;
     float: right;
     width: 25%;
@@ -238,5 +237,104 @@
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@media (max-width: 1000px) {
+    .aboutCompany span{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .ourOptions span{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    .textWrapper{
+        font-size: 15px;
+    }
+    .optionCardR span{
+        position: relative;
+        font-size: 20px;
+    }
+    .optionCardR img{
+        display: none;
+        position: absolute;
+        right: 0;
+        float: right;
+        width: 25%;
+    }
+    
+    .optionCard p{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .optionCard span{
+        position: relative;
+        font-size: 20px;
+    }
+    
+    .optionCard img{
+        display: none;
+        width: 25%;
+    }
+    
+    .optionCardBigR{
+        position: relative;
+        /* border: black solid 1px; */
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .optionCardBigR p{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .optionCardBigR span{
+        position: relative;
+        font-size: 20px;
+    }
+    .optionCardBigR img{
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        float: right;
+        width: 30%;
+    }
+    
+    .optionCardBigL{
+        position: relative;
+        /* border: black solid 1px; */
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+    
+    .optionCardBigL p{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .optionCardBigL span{
+        position: relative;
+        font-size: 20px;
+    }
+    .optionCardBigL img{
+        display: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+        float: right;
+        width: 30%;
+    }
+}
+
+@media (max-width: 500px) {
+    .textWrapper{
+        font-size: 13px;
+        width: 85%;
     }
 }

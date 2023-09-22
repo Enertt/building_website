@@ -1,4 +1,5 @@
 import Nav from "../Nav/Nav";
+import Menu from "../Menu/Menu";
 import styles from './header.module.css'
 import { NavLink } from "react-router-dom";
 
@@ -17,6 +18,11 @@ const Header = (props) => {
             <div className={styles.navigation}>
                 <Nav color={props.color} />
             </div>
+
+            <div className={styles.navigationSmall}>
+                <Menu color={props.color} />
+            </div>
+
         </header>
         // </div>
 

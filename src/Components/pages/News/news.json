@@ -1,0 +1,31 @@
+[
+    {
+        "id": 1,
+        "title":"Вiдбудовано будинок",
+        "date": "15.09.2023",
+        "photoSmall":"1_1.jpg",
+        "body": [
+            {"type": "text", "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"},
+            {"type": "photo", "style": "R", "src": "1_1.jpg"},
+            {"type": "text", "content": "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+            {"type": "text", "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"},
+            {"type": "text", "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"},
+            {"type": "text", "content": "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+            {"type": "photo", "style": "L", "src": "1_1.jpg"},
+            {"type": "text", "content": "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
+            {"type": "text", "content": "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
+
+        ]
+    },
+    {
+        "id": 2,
+        "title":"Наша Iнтернет сторiнка",
+        "date": "14.09.2023",
+        "photoSmall":"2_1.jpg",
+        "body": [
+            {"type": "text", "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"},
+            {"type": "photo", "style": "L", "src": "2_1.jpg"},
+            {"type": "text", "content": "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudexercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}
+        ]
+    }
+]

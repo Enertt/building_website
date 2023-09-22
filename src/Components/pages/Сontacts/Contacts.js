@@ -1,6 +1,4 @@
 import styles from './contacts.module.css'
-import { NavLink } from 'react-router-dom'
-import Nav from '../../Nav/Nav'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
 

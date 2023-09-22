@@ -86,3 +86,57 @@
     font-weight: 600;
     color: rgb(106, 163, 228);
 }
+
+@media (max-width: 650px) {
+    .wrapper{
+        width: 100%;
+    }
+    .title{
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .content{
+        gap: 40px;
+    }
+    .content .img{
+        width: 30%;
+    }
+    .content .personDescription .name{
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    .content .personDescription .description{
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 450px){
+    .wrapper{
+        width: 100%;
+    }
+    .title{
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .content{
+        gap: 40px;
+    }
+    .content .img{
+        width: 25%;
+        height: 90%;
+    }
+    .content .personDescription{
+        width: 55%;
+    }
+    .content .personDescription .name{
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .content .personDescription .description{
+        font-size: 12px;
+        font-weight: 500;
+    }
+}
