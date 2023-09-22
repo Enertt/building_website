@@ -14,7 +14,7 @@ props.getNewsThunkCreator();
     const [propsState, setPropsState] = useState({ title: '', body: [] })
     const [visibilityState, setVisibilityState] = useState({ pageVisibility: true, newsVisibility: false })
 
-
+debugger
     const news = props.newsData ? (
         props.newsData.map((element) => {
             return (

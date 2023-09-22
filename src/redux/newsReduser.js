@@ -2,10 +2,12 @@ import { API } from "../api/api";
 
 // Actions
 const SET_NEWS = 'SET-NEWS'
+const SET_TOKEN = 'SET-TOKEN'
 
 
 let initialState = {
     newsData: null,
+    token: null,
 };
 
 const newsReduser = (state = initialState, action) => {
@@ -16,6 +18,11 @@ const newsReduser = (state = initialState, action) => {
                 ...state,
                 newsData: action.news,
             };
+        case SET_TOKEN:
+            return {
+                ...state,
+                token: action.token,
+            };
 
         default: return state;
     }
@@ -24,6 +31,7 @@ const newsReduser = (state = initialState, action) => {
 
 // Action Creators
 export const setNewsAC = (news) => ({ type: SET_NEWS, news });
+export const setTokenAC = (token) => ({ type: SET_TOKEN, token });
 
 export const getNewsThunkCreator = () => {
 
@@ -34,5 +42,24 @@ export const getNewsThunkCreator = () => {
         });
     }
 }
+
+export const loginThunkCreator = (password) => {
+
+    return (dispatch) => {
+        API.login(password).then(token => {
+            dispatch(setTokenAC(token));
+        });
+    }
+}
+
+// export const setNewsThunkCreator = (token, password) => {
+
+//     return (dispatch) => {
+//         API.setNews(token, password)
+//         .then(token => {
+//             dispatch(setTokenAC(token));
+//         });
+//     }
+// }
 
 export default newsReduser;

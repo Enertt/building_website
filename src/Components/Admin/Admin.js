@@ -11,6 +11,8 @@ const Admin = (props) => {
     const handleSignIn = async () => {
         try {
           const isPasswordCorrect = await checkHash(inputValue);
+          props.loginThunkCreator(inputValue)
+          debugger
           if (isPasswordCorrect) {
             props.loginAC(true)
             setInputValue('')
