@@ -1,12 +1,14 @@
 import styles from './adminPage.module.css'
-import dataJson from '../pages/News/news.json'
+// import dataJson from '../pages/News/news.json'
 import AddNewForm from './AddNewForm'
 import deleteUserById from './JsScripts/deleteUser'
+import { API } from '../../api/api'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
 const AdminPage = (props) => {
+    props.getNewsThunkCreator();
     const [addNewFormState, setAddNewFormState] = useState(false)
 
     const [deleteState, setDeleteState] = useState({ state: false, id: 0})
@@ -18,7 +20,7 @@ const AdminPage = (props) => {
         }
     }, [props.isAuth, navigate]);
 
-    const newsList = dataJson.map((element) => {
+    const newsList = props.newsData ? (props.newsData.map((element) => {
         return(
             <div className={styles.newsElement}>
                 <span>{`id: ${element.id} | ${element.title} | ${element.date}`}</span>
@@ -27,12 +29,12 @@ const AdminPage = (props) => {
             </div>
             
         )
-    })
+    })) : (<div>Loading...</div>)
 
-    const ids = dataJson.map(item => item.id); // Создаем массив из значений id
+    const ids = props.newsData ? (props.newsData.map(item => item.id)) : (null); // Создаем массив из значений id
     let maxId
 
-    if (ids.length > 0) {
+    if (ids && ids.length > 0) {
         maxId = Math.max(...ids); // Находим максимальное значение в массиве
     } else {
         maxId = 1
@@ -68,7 +70,7 @@ const AdminPage = (props) => {
                         <span className={styles.deletingForm_span}>{`Видалити новину з id: ${deleteState.id}`}</span>
                         <div className={styles.deletingForm_buttonWrapper}>
                             <button onClick={()=>{
-                                deleteUserById(deleteState.id)
+                                API.setNews(props.token, deleteUserById(deleteState.id, props.newsData))
                                 setDeleteState({state: false, id: 0})
                             }} className={styles.deletingForm_button}> Видалити </button>
                             <button onClick={()=>{
