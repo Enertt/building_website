@@ -1,6 +1,4 @@
-
-
-const deleteUserById = (id, data) => {
+const deleteNewsById = (id, data) => {
     let newData = []
     data.map((e) => {
         if(e.id !== id){
@@ -10,4 +8,4 @@ const deleteUserById = (id, data) => {
     return newData
 }
 
-export default deleteUserById
+export default deleteNewsById

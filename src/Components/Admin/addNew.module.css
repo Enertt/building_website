@@ -240,3 +240,11 @@
     margin-top: 20px;
 }
 
+.newsElement{
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+.newsElement button{
+    cursor: pointer;
+}

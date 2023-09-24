@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import AdminPage from './AdminPage';
-import { getNewsThunkCreator } from '../../redux/newsReduser';
+import { getNewsThunkCreator, setNewsThunkCreator } from '../../redux/newsReduser';
 
 let mapStateToProps = (state) => ({
     isAuth: state.authReduser.isAuth,
@@ -8,4 +8,4 @@ let mapStateToProps = (state) => ({
     token: state.newsReduser.token,
 });
 
-export default connect(mapStateToProps, {getNewsThunkCreator})(AdminPage);
+export default connect(mapStateToProps, {getNewsThunkCreator, setNewsThunkCreator})(AdminPage);

@@ -1,3 +1,5 @@
+import { API } from "../api/api";
+
 // Actions
 const LOGIN = 'LOGIN';
 
@@ -48,17 +50,13 @@ const authReduser = (state = initialState, action) => {
 // Action Creators
 export const loginAC = (newState) => ({ type: LOGIN, newState });
 
-// export const getUsersThunkCreator = (currentPage, pageSize) => {
-
+// export const tokenThunkCreator = (token) => {
+// debugger
 //     return (dispatch) => {
-
-//         dispatch(toggleIsFetchingAC(true));
-
-//         usersAPI.getUsers(currentPage, pageSize).then(data => {
-//             dispatch(toggleIsFetchingAC(false));
-//             dispatch(setUsersAC(data.items));
-//             dispatch(setTotalUsersCountAC(data.totalCount));
-//             dispatch(setCurrentPageAC(currentPage));
+//         API.checkToken(token).then(response => {
+//             if(response.status === 200){
+//                 dispatch(loginAC(true))
+//             }else{dispatch(loginAC(false))}
 //         });
 //     }
 // }
