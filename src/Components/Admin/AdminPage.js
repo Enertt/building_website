@@ -1,7 +1,8 @@
 import styles from './adminPage.module.css'
 // import dataJson from '../pages/News/news.json'
 import AddNewForm from './AddNewForm'
-import deleteUserById from './JsScripts/deleteNews'
+import deleteNewsById from './JsScripts/deleteNews'
+import modNewsById from './JsScripts/modNews'
 import { API } from '../../api/api'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
@@ -31,6 +32,16 @@ const AdminPage = (props) => {
     const [modSmallPhotoState, setModSmallPhotoState,] = useState(null)
     const [modBodyState, setModBodyState,] = useState(null)
 
+    const [modBodyElementState, setModBodyElementState,] = useState(null)
+
+
+    const modStates = (modState) => {
+        setModIdState(modState.element ? modState.element.id : null)
+        setModTitleState(modState.element ? modState.element.title : null)
+        setModDateState(modState.element ? modState.element.date : null)
+        setModSmallPhotoState(modState.element ? modState.element.photoSmall : null)
+        setModBodyState(modState.element ? modState.element.body : null)
+    }
 
 
     useEffect(() => {
@@ -47,7 +58,12 @@ const AdminPage = (props) => {
                 <div className={styles.newsElement} key={element.id}>
                     <span>{`id: ${element.id} | ${element.title} | ${element.date}`}</span>
                     <button onClick={() => { setDeleteState({ state: true, id: element.id }) }}>DEL</button>
-                    <button onClick={() => { setModState({ state: true, element: element }) }}>MOD</button>
+                    <button onClick={() => { 
+                        setModState({ state: true, element: element }) 
+
+                        modStates({ state: true, element: element })
+                        debugger
+                        }}>MOD</button>
                 </div>
             );
         });
@@ -91,7 +107,8 @@ const AdminPage = (props) => {
                         <AddNewForm
                             setNewsThunkCreator={props.setNewsThunkCreator}
                             setAddNewFormState={setAddNewFormState}
-                            maxId={maxId} newsData={props.newsData}
+                            maxId={maxId} 
+                            newsData={props.newsData}
                             token={props.token}
                             setDeleteState={setDeleteState} />
                     </div>
@@ -104,7 +121,7 @@ const AdminPage = (props) => {
                         <div className={styles.deletingForm_buttonWrapper}>
                             <button onClick={() => {
 
-                                props.setNewsThunkCreator(props.token, deleteUserById(deleteState.id, props.newsData))
+                                props.setNewsThunkCreator(props.token, deleteNewsById(deleteState.id, props.newsData))
                                 setDeleteState({ state: false, id: 0 })
                                 props.getNewsThunkCreator();
                             }} className={styles.deletingForm_button}> Видалити </button>
@@ -120,31 +137,68 @@ const AdminPage = (props) => {
                 <div className={modState.state ? styles.modWrapper : styles.modWrapperNone}>
                     <div className={styles.modWindow}>
                         <div className={styles.codeWindow}>
-                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Id: `}</div><input value={modState.element ? modState.element.id : "-"}></input></div>
-                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Title: `}</div><input value={modState.element ? modState.element.title : "-"}></input></div>
-                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Date: `}</div><input value={modState.element ? modState.element.date : "-"}></input></div>
-                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`SmallPhoto: `}</div><input value={modState.element ? modState.element.photoSmall : "-"}></input></div>
+                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Id: `}</div><input value={modIdState ? modIdState : ""} onChange={(e)=>{setModIdState(e.target.value)}}></input></div>
+                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Title: `}</div><input value={modTitleState ? modTitleState : ""} onChange={(e)=>{setModTitleState(e.target.value)}}></input></div>
+                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Date: `}</div><input value={modDateState ? modDateState : ""} onChange={(e)=>{setModDateState(e.target.value)}}></input></div>
+                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`SmallPhoto: `}</div><input value={modSmallPhotoState ? modSmallPhotoState : ""} onChange={(e)=>{setModSmallPhotoState(e.target.value)}}></input></div>
                             <div className={styles.modElement}><div className={styles.modElementSpan}>{`Body: `}</div></div>
                             <div>
-                                {modState.element ? (modState.element.body.map((element) => {
+                                {modBodyState ? (modBodyState.map((element) => {
                                     if (element.type === 'text') {
-                                        debugger
                                         return (
-                                            <div className={styles.modElementBody}><span>{`Paragraph: `}</span><input value={element.content}></input></div>
+                                            <div className={styles.modElementBody}><span>{`Paragraph: `}</span><input value={element.content} onChange={(el)=>{
+                                                setModBodyElementState(el.target.value)
+                                                let index = modBodyState.indexOf(element)
+                                                modBodyState.map((e)=>{
+                                                    if(modBodyState.indexOf(e) === index){
+                                                        e.content = modBodyElementState
+                                                        setModBodyElementState(null)
+                                                    }
+                                                })
+                                            }}></input></div>
                                         )
                                     } else if (element.type === 'photo') {
                                         return (
-                                            <div className={styles.modElementBody}><span>{`Photo: (Style(side): `}</span><input value={element.style}></input><span>{` Src(name): `}</span><input value={element.src}></input><span>{`)`}</span></div>
+                                            <div className={styles.modElementBody}><span>{`Photo: (Style(side): `}</span><input value={element.style} onChange={(el)=>{
+                                                setModBodyElementState(el.target.value)
+                                                let index = modBodyState.indexOf(element)
+                                                modBodyState.map((e)=>{
+                                                    if(modBodyState.indexOf(e) === index){
+                                                        e.style = modBodyElementState
+                                                        setModBodyElementState(null)
+                                                    }
+                                                })
+                                            }}></input><span>{` Src(name): `}</span><input value={element.src} onChange={(el)=>{
+                                                setModBodyElementState(el.target.value)
+                                                let index = modBodyState.indexOf(element)
+                                                modBodyState.map((e)=>{
+                                                    if(modBodyState.indexOf(e) === index){
+                                                        e.src = modBodyElementState
+                                                        setModBodyElementState(null)
+                                                    }
+                                                })
+                                            }}></input><span>{`)`}</span></div>
                                         )
                                     }
                                     return null
                                 })
-                                ) : (<div></div>)}
+                                ) : (<div>something wrong</div>)}
                             </div>
 
                         </div>
                         <div className={styles.buttonBlock}>
-                            <button>Зберегти</button>
+                            <button onClick={() => { 
+                                props.setNewsThunkCreator(props.token, modNewsById(modState.element.id, props.newsData, { id: modIdState, title: modTitleState, date: modDateState, photoSmall: modSmallPhotoState, body: modBodyState}))
+                                debugger
+                                setModIdState(null)
+                                setModTitleState(null)
+                                setModDateState(null)
+                                setModSmallPhotoState(null)
+                                setModBodyState(null)
+
+                                setModState({ state: false, element: null })
+                                props.getNewsThunkCreator();
+                                }}>Зберегти</button>
                             <button onClick={() => { setModState({ state: false, element: null }) }}>Повернутись</button>
                         </div>
                     </div>
