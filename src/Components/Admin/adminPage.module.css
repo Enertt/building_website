@@ -1,3 +1,9 @@
+.adminKastyl{
+    position: absolute;
+    top: 0;
+}
+
+
 .wrapper{
     width: 100%;
     height: 100vh;
@@ -230,4 +236,86 @@
 
 .deletingForm_button:hover{
     transform: scale(1.05);
+}
+.modWrapperNone{display: none;}
+.modWrapper{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.719);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modWindow{
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    background-color: white;
+    box-shadow: 0 0 5px rgb(77, 77, 77);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.codeWindow{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+    background-color: rgb(241, 241, 241);
+    box-shadow: inset 0 0 5px rgb(153, 153, 153);
+    border-radius: 15px;
+    overflow-y: scroll;
+}
+
+.buttonBlock{
+    width: 50%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonBlock button{
+    cursor: pointer;
+    width: 40%;
+    height: 100%;
+    font-size: 20px;
+    border-radius: 15px;
+    border: rgb(177, 177, 177) solid 1px;
+    transition: 0.3s;
+}
+.buttonBlock button:hover{
+    transform: scale(1.05);
+    background-color: rgb(214, 214, 214);
+}
+.modElement{
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+.modElementBody{
+    width: 90%;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+.modElementBody input{
+    width: 85%;
+}
+.modElementBody span{
+    width: 20%;
+}
+.modElement input{
+    width: 70%;
+}
+.modElementSpan{
+    width: 110px;
 }

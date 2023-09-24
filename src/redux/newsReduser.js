@@ -1,4 +1,5 @@
 import { API } from "../api/api";
+import { loginAC } from "./authReduser";
 
 // Actions
 const SET_NEWS = 'SET-NEWS'
@@ -14,6 +15,7 @@ const newsReduser = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_NEWS:
+            debugger
             return {
                 ...state,
                 newsData: action.news,
@@ -46,20 +48,22 @@ export const getNewsThunkCreator = () => {
 export const loginThunkCreator = (password) => {
 
     return (dispatch) => {
-        API.login(password).then(token => {
-            dispatch(setTokenAC(token));
+        API.login(password).then(response => {
+            if(response.status === 200){
+                dispatch(loginAC(true))
+            }
+            dispatch(setTokenAC(response.data.token));
         });
     }
 }
 
-// export const setNewsThunkCreator = (token, password) => {
+export const setNewsThunkCreator = (token, newNews) => {
 
-//     return (dispatch) => {
-//         API.setNews(token, password)
-//         .then(token => {
-//             dispatch(setTokenAC(token));
-//         });
-//     }
-// }
+    return (dispatch) => {
+        API.setNews(token, newNews).then(data => {
+            dispatch(setNewsAC(data));
+        });
+    }
+}
 
 export default newsReduser;

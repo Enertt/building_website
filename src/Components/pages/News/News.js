@@ -9,7 +9,9 @@ import { useState, useEffect } from 'react'
 
 
 const News = (props) => {
-props.getNewsThunkCreator();
+    if(!props.newsData){
+        props.getNewsThunkCreator();
+    }
 
     const [propsState, setPropsState] = useState({ title: '', body: [] })
     const [visibilityState, setVisibilityState] = useState({ pageVisibility: true, newsVisibility: false })

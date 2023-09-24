@@ -1,5 +1,8 @@
 import styles from "./addNew.module.css"
 import dataJson from '../pages/News/news.json'
+import { format } from 'date-fns';
+import addNews from "./JsScripts/addNews";
+import { API } from "../../api/api";
 import { useState } from "react"
 
 const AddNewForm = (props) => {
@@ -50,9 +53,9 @@ const AddNewForm = (props) => {
 
     const [bodyState, setBodyState] = useState([])
     
-    const [newsObjectId, setNewsObjectId] = useState(null)
+    const [newsObjectId, setNewsObjectId] = useState(props.maxId+1)
     const [newsObjectTitle, setNewsObjectTitle] = useState(null)
-    const [newsObjectDate, setNewsObjectDate] = useState(null)
+    const [newsObjectDate, setNewsObjectDate] = useState(format(new Date(), 'dd-MM-yyyy'))
     const [newsObjectPhotoSmall, setNewsObjectPhotoSmall] = useState(null)
     const [newsObjectBody, setNewsObjectBody] = useState(null)
 
@@ -101,8 +104,26 @@ const AddNewForm = (props) => {
                 </div>
             </div>
             <button onClick={()=>{
+                props.setNewsThunkCreator(props.token, addNews({
+                    id: newsObjectId, 
+                    title: newsObjectTitle, 
+                    date: newsObjectDate,
+                    photoSmall: photosArray[0].name,
+                    body: bodyState,
+                },props.newsData))
+                // API.setNews().then(data => {
+                //     props.setNewsListState(data.map((element) => {
+                //         return(
+                //             <div className={styles.newsElement}>
+                //                 <span>{`id: ${element.id} | ${element.title} | ${element.date}`}</span>
+                //                 <button onClick={()=>{props.setDeleteState({state: true, id: element.id})}}>DEL</button>
+                //                 <button>MOD</button>
+                //             </div>
+                            
+                //         )
+                //     }))
+                // })
                 
-
 
                 props.setAddNewFormState(false)
                 setNewsObjectTitle('')
