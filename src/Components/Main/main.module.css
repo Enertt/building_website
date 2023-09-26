@@ -1,3 +1,7 @@
+:root {
+  --color-primary-blue: rgb(106, 163, 228);
+  --color-primary-white: rgb(255, 255, 255);
+}
 * {
   margin: 0;
   padding: 0;
@@ -47,7 +51,6 @@
   height: 100px;
   display: flex;
   justify-content: center;
-
   transform: translateY(20px);
   opacity: 0;
   animation: fadeInUp2 0.5s ease-in-out forwards;
@@ -55,12 +58,12 @@
 
 .hero_title {
   font-size: 120px;
-  color: rgb(255, 255, 255);
+  color: var(--color-primary-white);
 }
 
 .header span {
   font-size: 22px;
-  color: rgb(255, 255, 255);
+  color: var(--color-primary-white);
   font-weight: 700;
 }
 
@@ -69,7 +72,7 @@
   width: 100%;
   height: 56px;
   background-color: #31261a;
-  color: rgb(255, 255, 255);
+  color: var(--color-primary-white);
   margin-bottom: 90px;
 
   display: flex;
@@ -78,9 +81,8 @@
 }
 
 .keyPoints_span {
-  font-family: "Gunterz", sans-serif;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 900;
 }
 
 .uppercase_text {

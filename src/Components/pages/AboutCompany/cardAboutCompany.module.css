@@ -1,58 +1,93 @@
-.wrapper{
-    width: 80%;
-    height: 100%;
+:root {
+  --color-primary-blue: rgb(106, 163, 228);
 
+  /* --color-primary-dark: #31261a;
+  --color-primary-light: #faf4ea;
+  --color-brand-dark: #465929;
+  --color-brand-light: #819b57; */
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.wrapper,
+.text,
+.photo {
+  height: 100%;
+}
+
+.wrapper,
+.text {
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrapper {
+  width: 80%;
+  align-items: center;
+}
+
+.text {
+  flex-direction: column;
+}
+
+.text .title,
+.text .further {
+  font-weight: 600;
+}
+
+.text .title,
+.text .textItem {
+  color: #31261a;
+}
+
+.text {
+  width: 39%;
+
+  .title {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    font-size: 40px;
+    width: 70%;
+  }
+
+  .textItem {
+    font-weight: 500;
+    font-size: 18px;
+  }
 }
 
-.text{
-    width: 55%;
-    height: 100%;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    .title{
-        display: flex;
-        flex-direction: column;
-        font-size: 50px;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        color: #31261A;
-    }
-
-    .textItem{
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
-        font-size: 18px;
-    }
-
-    .further{
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        
-    }
+.further a,
+.uppercase_text {
+  color: var(--color-primary-blue);
 }
 
-.further a{
-    color: rgb(106, 163, 228);
+.text p,
+.further_btn {
+  font-weight: 100;
 }
 
-.text p{
-    color: rgb(106, 163, 228);
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
+.uppercase_text {
+  text-transform: uppercase;
 }
 
-.photo{
-    width: 30%;
-    height: 100%;
-    overflow: hidden;
-    background-image: url(../../../assets/image1571.png);
-    background-position: center;
-    background-size: cover;
-    border-radius: 170px 170px 0 0;
+.photo {
+  width: 25%;
+  overflow: hidden;
+  background-image: url(../../../assets/image1571.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 170px 170px 0 0;
+}
+
+.further_btn {
+  color: white;
+  border: 10px solid var(--color-primary-blue);
+  border-radius: 10px;
+  width: 11rem;
+  height: 3rem;
+  background-color: var(--color-primary-blue);
+  text-transform: capitalize;
+  font-size: 18px;
 }

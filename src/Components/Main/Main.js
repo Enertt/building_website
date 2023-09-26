@@ -23,10 +23,10 @@ const Main = () => {
 
       <div className={styles.keyPoints}>
         <span className={`${styles.uppercase_text} ${styles.keyPoints_span}`}>
-          Нерухомість та будівництво
+          25 років на ринку
         </span>
         <span className={`${styles.uppercase_text} ${styles.keyPoints_span}`}>
-          25 років на ринку
+          Нерухомість та будівництво
         </span>
         <span className={`${styles.uppercase_text} ${styles.keyPoints_span}`}>
           Великий попит
