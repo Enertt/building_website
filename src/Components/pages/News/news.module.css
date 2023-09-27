@@ -117,13 +117,14 @@
     width: 80%;
     height: 70px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 100px;
+    justify-content: center;
     transition: 0.3s;
 
     .date {
         position: absolute;
-        right: 10px;
+        top: 0px;
         color: rgb(136, 136, 136);
         font-size: 15px;
     }

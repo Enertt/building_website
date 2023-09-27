@@ -179,11 +179,11 @@ const AdminPage = (props) => {
                             <div className={styles.modElement}><div className={styles.modElementSpan}>{`Date: `}</div><input value={modDateState ? modDateState : ""} onChange={(e)=>{setModDateState(e.target.value)}}></input></div>
                             <div className={styles.modElement}><div className={styles.modElementSpan}>{`SmallPhoto: `}</div><input value={modSmallPhotoState ? modSmallPhotoState : ""} onChange={(e)=>{setModSmallPhotoState(e.target.value)}}></input></div>
                             <div className={styles.modElement}><div className={styles.modElementSpan}>{`Body: `}</div></div>
-                            <div>
+                            <div className={styles.modElementBodyWrapper}>
                                 {modBodyState ? (modBodyState.map((element) => {
                                     if (element.type === 'text') {
                                         return (
-                                            <div className={styles.modElementBody}><span>{`Paragraph: `}</span><input value={element.content} onChange={(el)=>{
+                                            <div className={styles.modElementBody}><span>{`Paragraph: `}</span><input className={styles.modElementBodyInput} value={element.content} onChange={(el)=>{
                                                 
                                                 let index = modBodyState.indexOf(element)
                                                 modBodyElement_content(index, el.target.value)
