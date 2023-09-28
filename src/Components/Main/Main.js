@@ -19,8 +19,12 @@ const Main = () => {
         
 
         <span className={`${styles.hero_title} ${styles.uppercase_text}`}>
-          <span>Тов</span>
-          <span>«Власт Буд»</span>
+          <div className={styles.hero_title_title}>
+            <span>Тов</span>
+            <span>«Власт Буд»</span>
+          </div>
+          
+          <span className={styles.description}>Завжди найкращі авангардні будівельні рішення</span>
         </span>
       </div>
 
