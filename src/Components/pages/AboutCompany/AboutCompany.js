@@ -34,6 +34,49 @@ const AboutCompany = () => {
                             офісів).
                         </p>
                         <hr />
+
+                    </div>
+
+                    <div className={styles.ourServices}>
+                        <span>Наші послуги</span>
+                            <div className={styles.ourServicesWrapper}>
+                                <div className={styles.ourServicesElementWrapper}>
+                                    <div className={styles.ourServicesElement}>
+                                        <span>Будівництво житлових і нежитлових будівель</span>
+                                    </div>
+                                    <div className={styles.ourServicesElement}>
+                                        <span>Будівництво різного типу споруд</span>
+                                    </div>
+                                </div>
+                                <div className={styles.ourServicesElementWrapper}>
+                                    <div className={styles.ourServicesElement}>
+                                        <span>Знесення та підготовчі роботи на будівельному майданчику</span>
+                                    </div>
+                                    <div className={styles.ourServicesElement}>
+                                        <span>Електромонтажні, водопровідні та інші будівельно-монтажні роботи</span>
+                                    </div>
+                                </div>
+                                <div className={styles.ourServicesElement}>
+                                    <span>Роботи із завершення будівництва</span>
+                                </div>
+                            </div>
+
+                        <hr />
+                    </div>
+                        
+                    <div className={styles.ourPartners}>
+                        <span>Партнери компанії</span>
+
+                        <div className={styles.partnersBlock}>
+                            <div className={styles.partnersBlockItem}></div>
+                            <div className={styles.partnersBlockItem}></div>
+                            <div className={styles.partnersBlockItem}></div>
+                            <div className={styles.partnersBlockItem}></div>
+                            <div className={styles.partnersBlockItem}></div>
+                            <div className={styles.partnersBlockItem}></div>
+                        </div>
+
+                        <hr />
                     </div>
 
 
