@@ -135,7 +135,17 @@
     background-color: rgb(255, 255, 255);
     margin-bottom: 20px;
     display: flex;
-    align-items: center;
+    align-items: center; 
+    transition: 0.1s;  
+}
+.ourServicesElement:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 10px rgb(75, 75, 75);
+}
+.ourServicesElement svg{
+    padding: 10px;
+    width: 110px;
+    height: 90%;
 }
 .ourServicesElement span{
     font-size: 18px;
