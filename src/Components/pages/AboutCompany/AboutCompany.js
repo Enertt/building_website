@@ -85,7 +85,9 @@ const AboutCompany = () => {
                         <span>Партнери компанії</span>
 
                         <div className={styles.partnersBlock}>
-                            <div className={styles.partnersBlockItem}></div>
+                            <div className={styles.partnersBlockItem}>
+
+                            </div>
                             <div className={styles.partnersBlockItem}></div>
                             <div className={styles.partnersBlockItem}></div>
                             <div className={styles.partnersBlockItem}></div>
