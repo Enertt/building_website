@@ -11,19 +11,38 @@ import copy from '../../jsonCopy.json'
 
 const AdminPage = (props) => {
 
+    const [messageState, setMessageState] = useState()
+
     useEffect(() => {
-        console.log('props.newsData changed:', props.newsData);
-    }, [props.newsData]);
+        if(props.token){
+            API.getMessage(props.token).then(res => {
+                setMessageState(res)
+            })
+        }
+    }, [messageState])
 
     useEffect(() => {
         debugger
         props.getNewsThunkCreator()
+
+        if(props.token){
+            API.getMessage(props.token).then(res => {
+                setMessageState(res)
+            })
+        }
     }, [])
+
+
+
 
     const [addNewFormState, setAddNewFormState] = useState(false)
 
     const [deleteState, setDeleteState] = useState({ state: false, id: 0 })
+    const [deleteMessageState, setDeleteMessageState] = useState({ state: false, id: 0 })
     const [modState, setModState] = useState({ state: false, element: null })
+
+    const [showState, setShowState] = useState({ state: false, element: null })
+
     const navigate = useNavigate()
 
     const [modIdState, setModIdState,] = useState(null)
@@ -32,44 +51,44 @@ const AdminPage = (props) => {
     const [modSmallPhotoState, setModSmallPhotoState,] = useState(null)
     const [modBodyState, setModBodyState,] = useState(null)
 
-    const [modBodyElementState, setModBodyElementState,] = useState(null)
+
 
     const modBodyElement_content = (index, value) => {
         let newArray = []
-        modBodyState.map((e) =>{
-            if(modBodyState.indexOf(e) === index){
+        modBodyState.map((e) => {
+            if (modBodyState.indexOf(e) === index) {
                 e.content = value
                 newArray.push(e)
-            }else{
+            } else {
                 newArray.push(e)
             }
         })
         setModBodyState(newArray)
-    } 
+    }
     const modBodyElement_style = (index, value) => {
         let newArray = []
-        modBodyState.map((e) =>{
-            if(modBodyState.indexOf(e) === index){
+        modBodyState.map((e) => {
+            if (modBodyState.indexOf(e) === index) {
                 e.style = value
                 newArray.push(e)
-            }else{
+            } else {
                 newArray.push(e)
             }
         })
         setModBodyState(newArray)
-    } 
+    }
     const modBodyElement_src = (index, value) => {
         let newArray = []
-        modBodyState.map((e) =>{
-            if(modBodyState.indexOf(e) === index){
+        modBodyState.map((e) => {
+            if (modBodyState.indexOf(e) === index) {
                 e.src = value
                 newArray.push(e)
-            }else{
+            } else {
                 newArray.push(e)
             }
         })
         setModBodyState(newArray)
-    } 
+    }
 
 
     const modStates = (modState) => {
@@ -90,22 +109,39 @@ const AdminPage = (props) => {
     let newsListState;
 
     if (props.newsData) {
+        
         newsListState = props.newsData.map((element) => {
             return (
                 <div className={styles.newsElement} key={element.id}>
                     <span>{`id: ${element.id} | ${element.title} | ${element.date}`}</span>
                     <button onClick={() => { setDeleteState({ state: true, id: element.id }) }}>DEL</button>
-                    <button onClick={() => { 
-                        setModState({ state: true, element: element }) 
+                    <button onClick={() => {
+                        setModState({ state: true, element: element })
 
                         modStates({ state: true, element: element })
-                        debugger
-                        }}>MOD</button>
+
+                    }}>MOD</button>
                 </div>
             );
         });
     } else {
         newsListState = <div>Loading...</div>;
+    }
+
+    let messageListState
+
+    if (messageState) {
+        messageListState = messageState.map((element) => {
+            return (
+                <div className={styles.newsElement} key={element.id}>
+                    <span>{`${element.name} | ${element.date}`}</span>
+                    <button onClick={() => { setDeleteMessageState({ state: true, id: element.id }) }}>DEL</button>
+                    <button onClick={() => { setShowState({ state: true, element: element }) }}>SHOW</button>
+                </div>
+            );
+        });
+    } else {
+        messageListState = <div>Loading...</div>;
     }
 
     const ids = props.newsData ? (props.newsData.map(item => item.id)) : (null); // Создаем массив из значений id
@@ -135,6 +171,16 @@ const AdminPage = (props) => {
                     <button onClick={() => { setAddNewFormState(true) }} className={styles.addNewButton}>Додати новину</button>
                 </div>
 
+                <div className={styles.messageListContent}>
+                    <span className={styles.newsListTitle}>Всi повiдомлення</span>
+                    <div className={styles.newsList}>
+                        <div className={styles.newsListBlock}>
+                            {messageListState}
+                        </div>
+
+                    </div>
+                </div>
+
 
 
 
@@ -144,7 +190,7 @@ const AdminPage = (props) => {
                         <AddNewForm
                             setNewsThunkCreator={props.setNewsThunkCreator}
                             setAddNewFormState={setAddNewFormState}
-                            maxId={maxId} 
+                            maxId={maxId}
                             newsData={props.newsData}
                             token={props.token}
                             setDeleteState={setDeleteState} />
@@ -170,38 +216,59 @@ const AdminPage = (props) => {
                     </div>
                 </div>
 
+                <div className={deleteMessageState.state ? styles.deleteWrapper : styles.deleteWrapperNone}>
+                    <div className={styles.deletingForm}>
+                        <span className={styles.deletingForm_span}>{`Видалити повiдомлення з id: ${deleteMessageState.id}`}</span>
+                        <div className={styles.deletingForm_buttonWrapper}>
+                            <button onClick={() => {
+
+                                API.delMessage(props.token, deleteMessageState.id)
+
+                                setDeleteMessageState({ state: false, id: 0 })
+
+                                API.getMessage(props.token).then(res => {  
+                                    setMessageState(res)
+                                })
+                            }} className={styles.deletingForm_button}> Видалити </button>
+                            <button onClick={() => {
+                                setDeleteMessageState({ state: false, id: 0 })
+                            }} className={styles.deletingForm_button}>Повернутись</button>
+                        </div>
+                    </div>
+                </div>
+
 
                 <div className={modState.state ? styles.modWrapper : styles.modWrapperNone}>
                     <div className={styles.modWindow}>
                         <div className={styles.codeWindow}>
-                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Id: `}</div><input value={modIdState ? modIdState : ""} onChange={(e)=>{setModIdState(e.target.value)}}></input></div>
-                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Title: `}</div><input value={modTitleState ? modTitleState : ""} onChange={(e)=>{setModTitleState(e.target.value)}}></input></div>
-                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Date: `}</div><input value={modDateState ? modDateState : ""} onChange={(e)=>{setModDateState(e.target.value)}}></input></div>
-                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`SmallPhoto: `}</div><input value={modSmallPhotoState ? modSmallPhotoState : ""} onChange={(e)=>{setModSmallPhotoState(e.target.value)}}></input></div>
+                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Id: `}</div><input value={modIdState ? modIdState : ""} onChange={(e) => { setModIdState(e.target.value) }}></input></div>
+                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Title: `}</div><input value={modTitleState ? modTitleState : ""} onChange={(e) => { setModTitleState(e.target.value) }}></input></div>
+                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`Date: `}</div><input value={modDateState ? modDateState : ""} onChange={(e) => { setModDateState(e.target.value) }}></input></div>
+                            <div className={styles.modElement}><div className={styles.modElementSpan}>{`SmallPhoto: `}</div><input value={modSmallPhotoState ? modSmallPhotoState : ""} onChange={(e) => { setModSmallPhotoState(e.target.value) }}></input></div>
                             <div className={styles.modElement}><div className={styles.modElementSpan}>{`Body: `}</div></div>
                             <div className={styles.modElementBodyWrapper}>
                                 {modBodyState ? (modBodyState.map((element) => {
                                     if (element.type === 'text') {
                                         return (
-                                            <div className={styles.modElementBody}><span>{`Paragraph: `}</span><input className={styles.modElementBodyInput} value={element.content} onChange={(el)=>{
-                                                
+                                            <div className={styles.modElementBody}><span>{`Paragraph: `}</span><input className={styles.modElementBodyInput} value={element.content} onChange={(el) => {
+
                                                 let index = modBodyState.indexOf(element)
                                                 modBodyElement_content(index, el.target.value)
-                                                
+
                                             }}></input></div>
                                         )
                                     } else if (element.type === 'photo') {
                                         return (
-                                            <div className={styles.modElementBody}><span>{`Photo: (Style(side): `}</span><input value={element.style} onChange={(el)=>{
-                                                
+                                            <div className={styles.modElementBody}><span>{`Photo: (Style(side): `}</span><input value={element.style} onChange={(el) => {
+
                                                 let index = modBodyState.indexOf(element)
                                                 modBodyElement_style(index, el.target.value)
-                                                
-                                            }}></input><span>{` Src(name): `}</span><input value={element.src} onChange={(el)=>{
-                                                
+
+                                            }}></input><span>{` Src(name): `}</span><input value={element.src} onChange={(el) => {
+
                                                 let index = modBodyState.indexOf(element)
                                                 modBodyElement_src(index, el.target.value)
-                                                
+
                                             }}></input><span>{`)`}</span></div>
                                         )
                                     }
@@ -212,9 +279,9 @@ const AdminPage = (props) => {
 
                         </div>
                         <div className={styles.buttonBlock}>
-                            <button onClick={() => { 
-                                props.setNewsThunkCreator(props.token, modNewsById(modState.element.id, props.newsData, { id: modIdState, title: modTitleState, date: modDateState, photoSmall: modSmallPhotoState, body: modBodyState}))
-                                debugger
+                            <button onClick={() => {
+                                props.setNewsThunkCreator(props.token, modNewsById(modState.element.id, props.newsData, { id: modIdState, title: modTitleState, date: modDateState, photoSmall: modSmallPhotoState, body: modBodyState }))
+
                                 setModIdState(null)
                                 setModTitleState(null)
                                 setModDateState(null)
@@ -223,11 +290,48 @@ const AdminPage = (props) => {
 
                                 setModState({ state: false, element: null })
                                 props.getNewsThunkCreator();
-                                }}>Зберегти</button>
+                            }}>Зберегти</button>
                             <button onClick={() => { setModState({ state: false, element: null }) }}>Повернутись</button>
                         </div>
                     </div>
                 </div>
+
+
+
+                {showState.state && (
+                    <div className={styles.showWrapper}>
+                        <div className={styles.showContent}>
+                            <div className={styles.id_Date}>
+                                <div className={styles.idBlock}>
+                                    <span className={styles.idBlockSpan}>Id</span>
+                                    <input className={styles.idBlockInput} value={showState.element.id}></input>
+                                </div>
+                                <div className={styles.dateBlock}>
+                                    <span className={styles.dateBlockSpan}>Дата</span>
+                                    <input className={styles.dateBlockInput} value={showState.element.date}></input>
+                                </div>
+                            </div>
+
+                            <div className={styles.name_Email}>
+                                <div className={styles.idBlock}>
+                                    <span className={styles.idBlockSpan}>Iм'я</span>
+                                    <input className={styles.idBlockInput} value={showState.element.name}></input>
+                                </div>
+                                <div className={styles.dateBlock}>
+                                    <span className={styles.dateBlockSpan}>Email</span>
+                                    <input className={styles.dateBlockInput} value={showState.element.email}></input>
+                                </div>
+                            </div>
+
+                            <div className={styles.showBodyBlock}>
+                                <span className={styles.bodyBlockSpan}>Повiдомлення</span>
+                                <textarea className={styles.bodyBlockTextarea} value={showState.element.body}></textarea>
+                            </div>
+
+                            <button onClick={() => { setShowState({ state: false, element: null }) }}>Повернутись</button>
+                        </div>
+                    </div>
+                )}
             </div>
         )
     } else {

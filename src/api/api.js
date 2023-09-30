@@ -28,8 +28,26 @@ export const API = {
                                 return response.data
                         })
         },
-        
+        sendMessage(message) {
+                debugger
+                return axios.post(`https://buildingwebsiteserver-production.up.railway.app/message`,
+                        { message }).then(response => {
+                                return response.data
+                        })
+        },
+        delMessage(token, id) {
+                debugger
+                return axios.post(`https://buildingwebsiteserver-production.up.railway.app/del_message`,
+                        { token, id }).then(response => {
+                                return response.data
+                        })
+        },
+        getMessage(token) {
+
+                return axios.post(`https://buildingwebsiteserver-production.up.railway.app/get_message`,
+                        { token }).then(response => {
+                                return response.data
+                        })
+
+        },
 }
-
-
-      

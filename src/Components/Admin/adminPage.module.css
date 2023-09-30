@@ -24,6 +24,19 @@
     align-items: center;
     gap: 20px;
 }
+
+.messageListContent{
+    padding: 10px;
+    position: relative;
+    width: 40%;
+    height: 80%;
+    /* border:  black solid 1px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
 .addNewButton{
     cursor: pointer;
     width: 50%;
@@ -150,6 +163,7 @@
 }
 
 .addNewWrapper{
+    backdrop-filter: blur(3px);
     position: absolute;
     width: 100%;
     height: 100vh;
@@ -191,7 +205,9 @@
 }
 
 .deleteWrapper{
+    backdrop-filter: blur(3px);
     position: absolute;
+    text-align: center;
     width: 100%;
     height: 100vh;
     background-color: rgba(255, 255, 255, 0.849);
@@ -246,6 +262,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    backdrop-filter: blur(3px);
 }
 
 .modWindow{
@@ -324,4 +341,75 @@
 }
 .modElementSpan{
     width: 110px;
+}
+.showWrapper{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.432);
+    backdrop-filter: blur(3px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.showContent{
+    width: 60%;
+    height: 70%;
+    background-color: white;
+    box-shadow: 0 0 5px rgb(126, 126, 126);
+    border-radius: 20px;
+    padding: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.id_Date, .name_Email{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.idBlock, .dateBlock{
+    display: flex;
+    flex-direction: column;
+    
+    width: 35%;
+}
+.idBlockSpan, .dateBlockSpan{
+    margin-left: 5px;
+    color: rgb(29, 6, 6);
+    font-size: 20px;
+}
+
+.idBlockInput, .dateBlockInput{
+    height: 20px;
+    border-radius: 15px;
+    border: rgb(114, 114, 114) solid 1px;
+    padding: 5px 10px 5px 10px;
+    width: 100%;
+}
+.showBodyBlock{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    width: 90%;
+    height: 50%;
+}
+.bodyBlockSpan{
+    color: rgb(29, 6, 6);
+    font-size: 20px;
+}
+
+.bodyBlockTextarea{
+    border-radius: 15px;
+    padding: 15px;
+    resize: none;
+    width: 95%;
+    height: 95%;
 }
