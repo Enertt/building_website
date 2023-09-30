@@ -325,16 +325,41 @@
         display: flex;
         flex-direction: column;
         justify-content:center;
-        width: 100%;
-
-        
-    
+        width: 100%;    
     }
-
-    
-    
     .mapSection{
         width: 100%;
     }
-    
+    .addresButton{
+        font-size: 14px;
+        width: 80%;
+    }
+    .userDataBlock{
+        display: flex;
+        flex-direction: column;
+    }
+    .name{
+        width: 100%;
+    }
+    .email{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .messageBlock{
+        margin-bottom: 20px;
+    }
+    .okWrapper span{
+        font-size: 20px;
+        color: rgb(44, 10, 10);
+    }
+    .okWrapper{
+        text-align: center;
+    }
+
+    .okSvg{
+        width: 70%;
+    }
+    .okWrapper button{
+        font-size: 18px;
+    }
 }

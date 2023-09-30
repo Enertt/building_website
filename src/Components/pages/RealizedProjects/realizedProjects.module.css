@@ -216,4 +216,9 @@
     .optionCard img{
         width: 50%;
     }
+    .optionCard span{
+        position: relative;
+        font-size: 18px;
+        width: 80%;
+    }
 }
