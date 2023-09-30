@@ -362,4 +362,7 @@
     .okWrapper button{
         font-size: 18px;
     }
+    .send{
+        width: 80%;
+    }
 }
