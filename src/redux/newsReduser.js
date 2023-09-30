@@ -15,7 +15,7 @@ const newsReduser = (state = initialState, action) => {
 
     switch (action.type) {
         case SET_NEWS:
-            debugger
+            
             return {
                 ...state,
                 newsData: action.news,
@@ -38,7 +38,7 @@ export const setTokenAC = (token) => ({ type: SET_TOKEN, token });
 export const getNewsThunkCreator = () => {
 
     return (dispatch) => {
-        debugger
+        
         API.getNews().then(data => {
             dispatch(setNewsAC(data));
         });

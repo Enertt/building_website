@@ -34,6 +34,43 @@ const AdminPage = (props) => {
 
     const [modBodyElementState, setModBodyElementState,] = useState(null)
 
+    const modBodyElement_content = (index, value) => {
+        let newArray = []
+        modBodyState.map((e) =>{
+            if(modBodyState.indexOf(e) === index){
+                e.content = value
+                newArray.push(e)
+            }else{
+                newArray.push(e)
+            }
+        })
+        setModBodyState(newArray)
+    } 
+    const modBodyElement_style = (index, value) => {
+        let newArray = []
+        modBodyState.map((e) =>{
+            if(modBodyState.indexOf(e) === index){
+                e.style = value
+                newArray.push(e)
+            }else{
+                newArray.push(e)
+            }
+        })
+        setModBodyState(newArray)
+    } 
+    const modBodyElement_src = (index, value) => {
+        let newArray = []
+        modBodyState.map((e) =>{
+            if(modBodyState.indexOf(e) === index){
+                e.src = value
+                newArray.push(e)
+            }else{
+                newArray.push(e)
+            }
+        })
+        setModBodyState(newArray)
+    } 
+
 
     const modStates = (modState) => {
         setModIdState(modState.element ? modState.element.id : null)
@@ -142,41 +179,29 @@ const AdminPage = (props) => {
                             <div className={styles.modElement}><div className={styles.modElementSpan}>{`Date: `}</div><input value={modDateState ? modDateState : ""} onChange={(e)=>{setModDateState(e.target.value)}}></input></div>
                             <div className={styles.modElement}><div className={styles.modElementSpan}>{`SmallPhoto: `}</div><input value={modSmallPhotoState ? modSmallPhotoState : ""} onChange={(e)=>{setModSmallPhotoState(e.target.value)}}></input></div>
                             <div className={styles.modElement}><div className={styles.modElementSpan}>{`Body: `}</div></div>
-                            <div>
+                            <div className={styles.modElementBodyWrapper}>
                                 {modBodyState ? (modBodyState.map((element) => {
                                     if (element.type === 'text') {
                                         return (
-                                            <div className={styles.modElementBody}><span>{`Paragraph: `}</span><input value={element.content} onChange={(el)=>{
-                                                setModBodyElementState(el.target.value)
+                                            <div className={styles.modElementBody}><span>{`Paragraph: `}</span><input className={styles.modElementBodyInput} value={element.content} onChange={(el)=>{
+                                                
                                                 let index = modBodyState.indexOf(element)
-                                                modBodyState.map((e)=>{
-                                                    if(modBodyState.indexOf(e) === index){
-                                                        e.content = modBodyElementState
-                                                        setModBodyElementState(null)
-                                                    }
-                                                })
+                                                modBodyElement_content(index, el.target.value)
+                                                
                                             }}></input></div>
                                         )
                                     } else if (element.type === 'photo') {
                                         return (
                                             <div className={styles.modElementBody}><span>{`Photo: (Style(side): `}</span><input value={element.style} onChange={(el)=>{
-                                                setModBodyElementState(el.target.value)
+                                                
                                                 let index = modBodyState.indexOf(element)
-                                                modBodyState.map((e)=>{
-                                                    if(modBodyState.indexOf(e) === index){
-                                                        e.style = modBodyElementState
-                                                        setModBodyElementState(null)
-                                                    }
-                                                })
+                                                modBodyElement_style(index, el.target.value)
+                                                
                                             }}></input><span>{` Src(name): `}</span><input value={element.src} onChange={(el)=>{
-                                                setModBodyElementState(el.target.value)
+                                                
                                                 let index = modBodyState.indexOf(element)
-                                                modBodyState.map((e)=>{
-                                                    if(modBodyState.indexOf(e) === index){
-                                                        e.src = modBodyElementState
-                                                        setModBodyElementState(null)
-                                                    }
-                                                })
+                                                modBodyElement_src(index, el.target.value)
+                                                
                                             }}></input><span>{`)`}</span></div>
                                         )
                                     }

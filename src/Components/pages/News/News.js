@@ -13,24 +13,23 @@ const News = (props) => {
         props.getNewsThunkCreator();
     }
 
-    const [propsState, setPropsState] = useState({ title: '', body: [] })
+    const [propsState, setPropsState] = useState({ title: '', date: '', body: [] })
     const [visibilityState, setVisibilityState] = useState({ pageVisibility: true, newsVisibility: false })
 
-debugger
     const news = props.newsData ? (
         props.newsData.map((element) => {
             return (
                 <div onClick={() => {
                     setVisibilityState({ pageVisibility: false, newsVisibility: true })
-                    setPropsState({ title: element.title, body: element.body })
+                    setPropsState({ title: element.title, date: element.date, body: element.body })
                 }} className={styles.newsElement}>
-                    <div className={styles.img}>
-                        <img src={require(`../../../assets/news/${element.photoSmall}`)} />
-                    </div>
-    
+                    {/* <div className={styles.img}>
+                        <img src={element.photoSmall} />
+                    </div> */}
+                    <span className={styles.date}>{element.date}</span>
                     <span>{element.title}</span>
     
-                    <span className={styles.date}>{element.date}</span>
+                    
                 </div>
             );
         })

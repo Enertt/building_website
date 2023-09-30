@@ -9,6 +9,12 @@ export const API = {
                         return response.data
                 })
         },
+        getState() {
+                return axios.get(`https://buildingwebsiteserver-production.up.railway.app/app`
+                ).then(response => {
+                        return response.data
+                })
+        },
         login(password) {
                 return axios.post('https://buildingwebsiteserver-production.up.railway.app/login',
                         { password }).then(response => {
@@ -22,4 +28,8 @@ export const API = {
                                 return response.data
                         })
         },
+        
 }
+
+
+      
