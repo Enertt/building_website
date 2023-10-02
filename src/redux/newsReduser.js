@@ -3,11 +3,13 @@ import { loginAC } from "./authReduser";
 
 // Actions
 const SET_NEWS = 'SET-NEWS'
+const SET_MESSAGES = 'SET-MESSAGES'
 const SET_TOKEN = 'SET-TOKEN'
 
 
 let initialState = {
     newsData: null,
+    messagesData: null,
     token: null,
 };
 
@@ -19,6 +21,12 @@ const newsReduser = (state = initialState, action) => {
             return {
                 ...state,
                 newsData: action.news,
+            };
+            case SET_MESSAGES:
+            
+            return {
+                ...state,
+                messagesData: action.messages,
             };
         case SET_TOKEN:
             return {
@@ -33,6 +41,7 @@ const newsReduser = (state = initialState, action) => {
 
 // Action Creators
 export const setNewsAC = (news) => ({ type: SET_NEWS, news });
+export const setMessagesAC = (messages) => ({ type: SET_MESSAGES, messages });
 export const setTokenAC = (token) => ({ type: SET_TOKEN, token });
 
 export const getNewsThunkCreator = () => {
@@ -41,6 +50,25 @@ export const getNewsThunkCreator = () => {
         
         API.getNews().then(data => {
             dispatch(setNewsAC(data));
+        });
+    }
+}
+
+export const getMessagesThunkCreator = (token) => {
+
+    return (dispatch) => {
+        
+        API.getMessage(token).then(data => {
+            dispatch(setMessagesAC(data));
+        });
+    }
+}
+export const delMessagesThunkCreator = (token, data) => {
+
+    return (dispatch) => {
+        
+        API.delMessage(token, data).then(data => {
+            dispatch(setMessagesAC(data));
         });
     }
 }

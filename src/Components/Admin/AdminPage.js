@@ -2,6 +2,7 @@ import styles from './adminPage.module.css'
 // import dataJson from '../pages/News/news.json'
 import AddNewForm from './AddNewForm'
 import deleteNewsById from './JsScripts/deleteNews'
+import deleteMessageById from './JsScripts/deleteMessage'
 import modNewsById from './JsScripts/modNews'
 import { API } from '../../api/api'
 import { useNavigate } from 'react-router-dom'
@@ -11,26 +12,25 @@ import copy from '../../jsonCopy.json'
 
 const AdminPage = (props) => {
 
-    const [messageState, setMessageState] = useState()
+    // const [messageState, setMessageState] = useState()
+
+    // useEffect(() => {
+    //     if(props.token){
+    //         API.getMessage(props.token).then(res => {
+    //             setMessageState(res)
+    //         })
+    //     }
+    // }, [messageState])
 
     useEffect(() => {
-        if(props.token){
-            API.getMessage(props.token).then(res => {
-                setMessageState(res)
-            })
-        }
-    }, [messageState])
-
-    useEffect(() => {
-        debugger
         props.getNewsThunkCreator()
-
-        if(props.token){
-            API.getMessage(props.token).then(res => {
-                setMessageState(res)
-            })
-        }
     }, [])
+
+    useEffect(() => {
+        if(props.token){
+            props.getMessagesThunkCreator(props.token)
+        }
+    }, [props.token])
 
 
 
@@ -109,37 +109,45 @@ const AdminPage = (props) => {
     let newsListState;
 
     if (props.newsData) {
+        if(props.newsData.length !== 0){
+            newsListState = props.newsData.map((element) => {
+                return (
+                    <div className={styles.newsElement} key={element.id}>
+                        <span>{`id: ${element.id} | ${element.title} | ${element.date}`}</span>
+                        <button onClick={() => { setDeleteState({ state: true, id: element.id }) }}>DEL</button>
+                        <button onClick={() => {
+                            setModState({ state: true, element: element })
+    
+                            modStates({ state: true, element: element })
+    
+                        }}>MOD</button>
+                    </div>
+                );
+            });
+        }else{newsListState = <div>Новин нема</div>;}
         
-        newsListState = props.newsData.map((element) => {
-            return (
-                <div className={styles.newsElement} key={element.id}>
-                    <span>{`id: ${element.id} | ${element.title} | ${element.date}`}</span>
-                    <button onClick={() => { setDeleteState({ state: true, id: element.id }) }}>DEL</button>
-                    <button onClick={() => {
-                        setModState({ state: true, element: element })
-
-                        modStates({ state: true, element: element })
-
-                    }}>MOD</button>
-                </div>
-            );
-        });
     } else {
         newsListState = <div>Loading...</div>;
     }
 
     let messageListState
 
-    if (messageState) {
-        messageListState = messageState.map((element) => {
-            return (
-                <div className={styles.newsElement} key={element.id}>
-                    <span>{`${element.name} | ${element.date}`}</span>
-                    <button onClick={() => { setDeleteMessageState({ state: true, id: element.id }) }}>DEL</button>
-                    <button onClick={() => { setShowState({ state: true, element: element }) }}>SHOW</button>
-                </div>
-            );
-        });
+    if (props.messagesData) {
+        debugger
+        if(props.messagesData.length !== 0){
+            messageListState = props.messagesData.map((element) => {
+                return (
+                    <div className={styles.newsElement} key={element.id}>
+                        <span>{`${element.name} | ${element.date}`}</span>
+                        <button onClick={() => { setDeleteMessageState({ state: true, id: element.id }) }}>DEL</button>
+                        <button onClick={() => { setShowState({ state: true, element: element }) }}>SHOW</button>
+                    </div>
+                );
+            });
+        }else{
+            messageListState = <div>Повiдомлень нема</div>
+        }
+        
     } else {
         messageListState = <div>Loading...</div>;
     }
@@ -222,13 +230,11 @@ const AdminPage = (props) => {
                         <div className={styles.deletingForm_buttonWrapper}>
                             <button onClick={() => {
 
-                                API.delMessage(props.token, deleteMessageState.id)
+                                props.delMessagesThunkCreator(props.token, deleteMessageById(deleteMessageState.id, props.messagesData))
 
                                 setDeleteMessageState({ state: false, id: 0 })
 
-                                API.getMessage(props.token).then(res => {  
-                                    setMessageState(res)
-                                })
+                                props.getMessagesThunkCreator(props.token)
                             }} className={styles.deletingForm_button}> Видалити </button>
                             <button onClick={() => {
                                 setDeleteMessageState({ state: false, id: 0 })

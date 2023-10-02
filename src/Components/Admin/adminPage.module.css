@@ -413,3 +413,15 @@
     width: 95%;
     height: 95%;
 }
+.showContent button{
+    width: 30%;
+    height: 40px;
+    border-radius: 15px;
+    border: rgb(119, 119, 119) solid 1px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.showContent button:hover{
+    box-shadow: 0 0 5px rgb(126, 126, 126);
+    transform: scale(1.05);
+}

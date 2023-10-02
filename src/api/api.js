@@ -35,10 +35,11 @@ export const API = {
                                 return response.data
                         })
         },
-        delMessage(token, id) {
+        delMessage(token, newData) {
                 debugger
                 return axios.post(`https://buildingwebsiteserver-production.up.railway.app/del_message`,
-                        { token, id }).then(response => {
+                        { token, newData }).then(response => {
+                                console.log(response.data.newData)
                                 return response.data
                         })
         },
