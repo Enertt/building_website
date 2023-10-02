@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/building_website/static/css/main.af166d2a.css",
-    "main.js": "/building_website/static/js/main.2328e7f2.js",
+    "main.css": "/building_website/static/css/main.cef8a72e.css",
+    "main.js": "/building_website/static/js/main.444f11f2.js",
     "static/js/787.ec704a7a.chunk.js": "/building_website/static/js/787.ec704a7a.chunk.js",
     "static/media/image1571.png": "/building_website/static/media/image1571.c85a3012538f5bc89048.png",
     "static/media/гулливер 3.jpeg": "/building_website/static/media/гулливер 3.ed413785c7761070b224.jpeg",
@@ -23,12 +23,12 @@
     "static/media/LogoW.png": "/building_website/static/media/LogoW.75c87e29e25cbcd39ce1.png",
     "static/media/сенатор 3.jpg": "/building_website/static/media/сенатор 3.3d1b9628b6d3ed622a99.jpg",
     "index.html": "/building_website/index.html",
-    "main.af166d2a.css.map": "/building_website/static/css/main.af166d2a.css.map",
-    "main.2328e7f2.js.map": "/building_website/static/js/main.2328e7f2.js.map",
+    "main.cef8a72e.css.map": "/building_website/static/css/main.cef8a72e.css.map",
+    "main.444f11f2.js.map": "/building_website/static/js/main.444f11f2.js.map",
     "787.ec704a7a.chunk.js.map": "/building_website/static/js/787.ec704a7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af166d2a.css",
-    "static/js/main.2328e7f2.js"
+    "static/css/main.cef8a72e.css",
+    "static/js/main.444f11f2.js"
   ]
 }
