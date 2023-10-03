@@ -408,6 +408,7 @@
 
 .bodyBlockTextarea{
     border-radius: 15px;
+    overflow-y: scroll;
     padding: 15px;
     resize: none;
     width: 95%;

@@ -7,6 +7,7 @@ import axios from "axios";
 
 
 import { useState } from "react"
+import { Form } from "react-router-dom";
 
 const AddNewForm = (props) => {
     const [addButtonsState, setAddButtonState] = useState({ addP: false, addImg: false })
@@ -37,7 +38,6 @@ const AddNewForm = (props) => {
 
                 // Добавляем файл в массив фотографий
                 setPhotosArray(prevPhotosArray => [...prevPhotosArray, file]);
-
                 setBodyImgSrc(file);
                 console.log(file)
             };
@@ -81,37 +81,40 @@ const AddNewForm = (props) => {
 
 
     const handleSaveNews = () => {
-        try {
-            // Создайте объект новости на основе текущих состояний
-            const newNews = {
-                id: newsObjectId,
-                title: newsObjectTitle,
-                date: newsObjectDate,
-                photoSmall: photosArray[0],
-                body: bodyState,
-            };
-            
 
-            // Отправьте новость на сервер
-            props.setNewsThunkCreator(props.token, addNews(newNews, props.newsData));
-            
+        props.setNewsThunkCreator(props.token, addNews({
+            id: newsObjectId, 
+            title: newsObjectTitle, 
+            date: newsObjectDate,
+            photoSmall: photosArray[0],
+            body: bodyState,
+        },props.newsData))
+        
+        
+        
 
-            // const formData = new FormData()
-            // formData.append('files', {id: props.maxId + 1, arr: photosArray})
+        // photosArray.map((element, index)=>{
+        //     const photos = new FormData()
 
-            // API.setPhotos(props.token, formData)
+        //     photos.append("token", props.token)
+        //     photos.append("id", newsObjectId)
+        //     photos.append("files", element)
+        //     photos.append("index", index)
 
-            // Очистите состояния после успешной отправки
-            props.setAddNewFormState(false);
-            setNewsObjectTitle('');
-            setNewsObjectDate(format(new Date(), 'dd-MM-yyyy'));
-            setPhotosArray([]);
-            setBodyState([]);
+        //     console.log(element)
+        //     API.setImg(photos)
+        // })
+        
 
-            console.log('Новость успешно отправлена на сервер');
-        } catch (error) {
-            console.error('Произошла ошибка при отправке новости', error);
-        }
+        
+
+        props.setAddNewFormState(false)
+        setNewsObjectTitle('')
+        setNewsObjectDate(format(new Date(), 'dd-MM-yyyy'));
+        setNewsObjectPhotoSmall(null)
+        setBodyState([])
+        setPhotosArray([]);
+
     };
 
     return (
@@ -150,37 +153,7 @@ const AddNewForm = (props) => {
                     }
                 </div>
             </div>
-            <button onClick={() => {
-                // handleSaveNews()
-                props.setNewsThunkCreator(props.token, addNews({
-                    id: newsObjectId, 
-                    title: newsObjectTitle, 
-                    date: newsObjectDate,
-                    photoSmall: photosArray[0],
-                    body: bodyState,
-                },props.newsData))
-                // API.setNews().then(data => {
-                //     props.setNewsListState(data.map((element) => {
-                //         return(
-                //             <div className={styles.newsElement}>
-                //                 <span>{`id: ${element.id} | ${element.title} | ${element.date}`}</span>
-                //                 <button onClick={()=>{props.setDeleteState({state: true, id: element.id})}}>DEL</button>
-                //                 <button>MOD</button>
-                //             </div>
-
-                //         )
-                //     }))
-                // })
-
-
-                props.setAddNewFormState(false)
-                setNewsObjectTitle('')
-                setNewsObjectDate(format(new Date(), 'dd-MM-yyyy'));
-                setNewsObjectPhotoSmall(null)
-                setBodyState([])
-                setPhotosArray([]);
- 
-            }} className={styles.buttonSave}>Зберегти новину</button>
+            <button onClick={() => {handleSaveNews()}} className={styles.buttonSave}>Зберегти новину</button>
 
 
 

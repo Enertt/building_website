@@ -28,6 +28,15 @@ export const API = {
                                 return response.data
                         })
         },
+        setImg(photos) {
+                return axios.post(`https://buildingwebsiteserver-production.up.railway.app/upload`, photos, {
+                        headers: {
+                          'Content-Type': 'multipart/form-data',
+                        },
+                      }).then(response => {
+                                return response.data
+                        })
+        },
         sendMessage(message) {
                 debugger
                 return axios.post(`https://buildingwebsiteserver-production.up.railway.app/message`,
