@@ -11,15 +11,15 @@ import { HashRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <HashRouter> */}
+    <HashRouter>
     {/* BrowserRouter - for developing and hosting*/}
     {/* HashRouter - for GH pages ONLY*/}
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <Provider store={store}>
           <App /*appState={state} dispatch={dispatch}*/ />
         </Provider>
-      </BrowserRouter>
-    {/* </HashRouter> */}
+      {/* </BrowserRouter> */}
+    </HashRouter>
   </React.StrictMode>
 );
 

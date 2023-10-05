@@ -19,6 +19,10 @@ const Nav = (props) => {
       }
     >
       <ul className={styles.navList}>
+
+        <li className={`${styles.navItem} ${styles.uppercase_text}`}>
+          <NavLink to="/news">Новини</NavLink>
+        </li>
         <li className={`${styles.navItem} ${styles.uppercase_text}`}>
           <NavLink to="/aboutCompany">Про компанію</NavLink>
         </li>

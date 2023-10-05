@@ -130,3 +130,47 @@
     }
 }
 
+@media (max-width: 1000px) {
+    .textWrapper{
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 130px;
+        width: 80%;
+        height: 80%;
+        font-size: 15px;
+        font-weight: 400;
+        background-color: rgba(255, 255, 255, 0.644);
+    }
+}
+
+@media (max-width: 600px) {
+    .textWrapper{
+        padding: 20px;
+        border-radius: 15px;
+        margin-top: 130px;
+        width: 80%;
+        height: 80%;
+        font-size: 15px;
+        font-weight: 400;
+        background-color: rgba(255, 255, 255, 0.644);
+    }
+    .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .addres{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        width: 100%;
+    
+    }
+    
+    .mapSection{
+        width: 100%;
+    }
+    
+}
