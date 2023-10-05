@@ -4,7 +4,7 @@
 }
 
 .wrapper{
-    user-select: none;
+    
     width: 100%;
 
     animation: fadeInUp 1s ease-in-out forwards;

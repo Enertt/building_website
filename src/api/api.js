@@ -41,7 +41,7 @@ export const API = {
                 debugger
                 return axios.post(`https://buildingwebsiteserver-production.up.railway.app/message`,
                         { message }).then(response => {
-                                return response.data
+                                return response
                         })
         },
         delMessage(token, newData) {

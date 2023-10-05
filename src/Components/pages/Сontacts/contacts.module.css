@@ -238,6 +238,11 @@
     font-size: 25px;
     color: rgb(44, 10, 10);
 }
+
+.okWrapper img{
+    width: 100px;
+    height: 100px;
+}
 .okWrapper button{
     cursor: pointer;
     padding: 7px;
@@ -268,6 +273,9 @@
     width: 70%;
     height: 70%;
     color: greenyellow;
+}
+.waitErrorSpan{
+    margin-bottom: 50px;
 }
 
 @keyframes fadeInUp {

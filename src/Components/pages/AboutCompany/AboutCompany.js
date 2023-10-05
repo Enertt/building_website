@@ -81,7 +81,7 @@ const AboutCompany = () => {
                         <hr />
                     </div>
                         
-                    <div className={styles.ourPartners}>
+                    {/* <div className={styles.ourPartners}>
                         <span>Партнери компанії</span>
 
                         <div className={styles.partnersBlock}>
@@ -96,7 +96,7 @@ const AboutCompany = () => {
                         </div>
 
                         <hr />
-                    </div>
+                    </div> */}
 
 
                     <div className={styles.ourOptions}>

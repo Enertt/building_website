@@ -18,9 +18,9 @@ const CardFaceOfConpany = () => {
 
             <div className={styles.contentWrapper}>
                 <div className={styles.content}>
-                    <div className={styles.img}>
+                    {/* <div className={styles.img}>
                         <div className={styles.imgDecoration}></div>
-                    </div>
+                    </div> */}
                     <div className={styles.personDescription}>
                         <div className={styles.name}>Власов Вiктор Васильович</div>
                         <div className={styles.description}>

@@ -4,10 +4,13 @@ import Header from '../../Header/Header'
 import { useState } from 'react'
 import { API } from '../../../api/api'
 import { format } from 'date-fns';
+import loading from '../../../assets/loading.gif'
 
 const Contacts = () => {
     const [formState, setFormState] = useState(false)
     const [okState, setOkState] = useState(false)
+    const [waitState, setWaitState] = useState(false)
+    const [loadingState, setLoadingState] = useState(false)
 
     const [nameState, setNameState] = useState('')
     const [emailState, setEmailState] = useState('')
@@ -80,12 +83,30 @@ const Contacts = () => {
                             const currentDate = new Date();
                             const currentTimeInMillis = currentDate.getTime();
                             const currentTimeInSeconds = Math.floor(currentTimeInMillis / 1000);
-                            API.sendMessage({id: currentTimeInSeconds, name: nameState, email: emailState, date: format(new Date(), 'dd-MM-yyyy'), body: messageState})
+
+                            API.sendMessage({id: currentTimeInSeconds, name: nameState, email: emailState, date: format(new Date(), 'dd-MM-yyyy'), body: messageState}).then(response => {
+                                if(response.status === 200){
+                                    setLoadingState(false)
+                                    setOkState(true);
+                                }else if(response.status === 429){
+                                    setLoadingState(false)
+                                    setWaitState(true);
+                                }
+                                
+                              })
+                              .catch(error => {
+                                // Обработка ошибки
+                                setLoadingState(false)
+                                setWaitState(true);
+                              });
+
+                            
+                            setLoadingState(true)
                             setNameState('')
                             setEmailState('')
                             setMessageState('')
 
-                            setOkState(true)
+                            
                         }}>Надiслати</button>
                         
 
@@ -103,6 +124,21 @@ const Contacts = () => {
                                 setFormState(false)
                                 setOkState(false)
                                 }}>Повернутись</button>
+                        </div>)}
+
+                        {waitState && (
+                        <div className={styles.okWrapper}>
+                            <span className={styles.waitErrorSpan}>Повiдомлення можна надсилати раз на 10 хвилин</span>
+
+                            <button onClick={()=>{
+                                setFormState(false)
+                                setWaitState(false)
+                                }}>Повернутись</button>
+                        </div>)}
+
+                        {loadingState && (
+                        <div className={styles.okWrapper}>
+                            <img src={loading} />
                         </div>)}
                     </div>
             </div>

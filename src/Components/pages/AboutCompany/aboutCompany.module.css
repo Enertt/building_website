@@ -4,7 +4,7 @@
 }
 
 .wrapper{
-    user-select: none;
+    
     width: 100%;
 
     animation: fadeInUp 1s ease-in-out forwards;
@@ -225,6 +225,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-weight: 500;
 }
 .optionCardR span{
     position: relative;
@@ -240,7 +241,7 @@
 .optionCard p{
     display: flex;
     flex-direction: column;
-    
+    font-weight: 500;
 }
 .optionCard span{
     position: relative;
@@ -263,6 +264,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-weight: 500;
 }
 .optionCardBigR span{
     position: relative;
@@ -288,6 +290,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-weight: 500;
 }
 .optionCardBigL span{
     position: relative;

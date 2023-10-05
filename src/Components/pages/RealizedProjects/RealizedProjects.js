@@ -38,11 +38,21 @@ const AboutCompany = () => {
                                 
                                 <p>
                                     <img className={styles.optionCardImgL} src={guliwer1} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Багатофункціональний комплекс «Gulliver» (укр. «Гулівер») — споруда «бізнес-класу» в Києві. З висотою 141,8 м він посідає друге місце як найвищий будинок України. Будівля складається з двох блоків: 35-поверхового бізнес-центру та 16-поверхового розважального комплексу.
                                     <img className={styles.optionCardImgR} src={guliwer2} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    «Гуллівер» — багатофункціональний торгово-розважальний центр загальною площею понад 150 000 м², який розділено на два блоки.
+
+Перший блок: торгово-розважальна частина, розташована на 10-ти поверхах, та 6-поверхова надбудова над розважальним комплексом. Інфраструктура торгово-розважальної частини містить: підземний супермаркет, площею понад 9 000 м², далі на перших 4-х поверхах розмістяться бутіки, вище буде знаходитися боулінг на 24 доріжки, 7-зальний кінотеатр, дитяча ігрова зона, ресторани, салони краси, фітнес-клуб із 25-метровим басейном.
                                     <img className={styles.optionCardImgL} src={guliwer3} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Другий блок: 33-поверховий (35 поверхів із технічними) бізнес-центр, який складатиметься з офісних приміщень преміум-класу.
+
+Послуги телекомунікаційні будуть надавати декілька операторів і один з них є ТОВ «Укрком».
+Конструкція монолітно-каркасна.
+Висота стелі 3,6 м.
+У бізнес-центрі розташовані 8 високошвидкісних ліфтів ThyssenKrupp Elevator (швидкість 4 м/c, вантажопідйомність — 1000 кг)
+У ТРЦ знаходяться 20 ліфтів (4 панорамні і 16 звичайних), в розважальному центрі 10 ескалаторів.
+Інженерні сітки: автономна котельня, аварійний дизельний генератор і три трансформаторні підстанції. Будівлю обладнано системами кондиціювання, тепло- та водопостачання.
+Підземний 3-рівневий паркінг на 600 машиномісць, а також надземний паркінг на 150 машиномісць.
                                 
                                 </p>
                             </div>
@@ -52,13 +62,13 @@ const AboutCompany = () => {
                                 
                                 <p>
                                     <img className={styles.optionCardImgR} src={senator1} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Бізнес-центр Сенатор – один із найпрестижніших офісних центрів класу «А» у Києві. Розташований у Печерському районі на вул. Московська 32/2 у центрі ділового та політичного життя міста. З 2013 року будова не втрачає актуальності та продовжує приваблювати своєю презентабельністю. Наявність необхідної інфраструктури всередині та зовні будівлі, технічні можливості та близькість до центру міста роблять оренду тут максимально комфортною. Добратися до бізнес-центру не важко, як на автомобілі, так і на громадському транспорті. Найближчі станції метро «Печерська», «Арсенальна» та «Кловська» знаходяться в пішій доступності.
                                     <img className={styles.optionCardImgL} src={senator2} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    БЦ «Senator» має загальну площу 53715 м.кв. та 19 поверхами. В оренду пропонується великий вибір офісів від 90 до 2250 кв. Всі офіси мають вільне планування та якісне чистове оздоблення. Додаткове природне освітлення одержують за рахунок панорамних вікон. Уникнути стовпотворіння під час переміщення між поверхами допомагають 8 безшумних ліфтів, які комфортно розподіляють завантаженість бізнес-центру.
                                     <img className={styles.optionCardImgR} src={senator3} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Орендарям гарантований високий рівень сервісу та високотехнологічні системи життєзабезпечення. Підземний паркінг розрахований на 156 місць. Цілодобове відеоспостереження та охоронна система забезпечують безпеку та збереження автомобілів, а також майна на всій території комплексу. Припливно-витяжна система вентиляції та система кондиціонування
                                     <img className={styles.optionCardImgL} src={senator4} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    приміщень встановлена ​​з можливістю регулювання мікроклімату у кожному офісі індивідуально. Центральна опалювальна система забезпечує тепло в офісах у холодну пору року. Протипожежна система безпеки відповідає всім необхідним нормам. Безперебійну роботу інтернету за будь-яких навантажень забезпечують оптоволоконні комунікації.
                                 
                                 </p>
                             </div>
@@ -68,9 +78,9 @@ const AboutCompany = () => {
                                 
                                 <p>
                                     <img className={styles.optionCardImgR} src={mandarin1} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                                    <img className={styles.optionCardImgL} src={mandarin1} />
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    Торгово-розважальний центр «Мандарин плаза» розташований в районі Бессарабської площі. З давніх часів сюди люблять приходити і кияни, і гості столиці помилуватися величезним асортиментом ексклюзивного товару і вибрати розкішні подарунки для себе і своєї сім'ї.
+
+Фейєрверк вогнів, блиск вітрин, приємна музика, вивіски відомих брендів, чудовий інтер'єр - все розташовує до приємного і корисного проведення часу. А ескалатори і швидкісні ліфти доставлять вас на будь-який з 7 поверхів задоволення. Ніде в Україні ще немає більш масштабного комплексу, під дахом якого зібрано таку величезну кількість кращих товарів, представлених міжнародними брендами в ціновій політиці вище середнього.
                                 
                                 </p>
                             </div>
@@ -78,7 +88,7 @@ const AboutCompany = () => {
                         </div>
 
 
-                        <span>Будуємо</span>
+                        {/* <span>Будуємо</span>
 
                         <div className={styles.optionList}>
                             ...
@@ -95,7 +105,7 @@ const AboutCompany = () => {
 
                             
 
-                        </div>
+                        </div> */}
                     </div>
                     
                 </div>
