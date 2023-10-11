@@ -1,8 +1,21 @@
 import styles from './contacts.module.css'
 import Footer from '../../Footer/Footer'
 import Header from '../../Header/Header'
+import { useState } from 'react'
+import { API } from '../../../api/api'
+import { format } from 'date-fns';
+import loading from '../../../assets/loading.gif'
 
 const Contacts = () => {
+    const [formState, setFormState] = useState(false)
+    const [okState, setOkState] = useState(false)
+    const [waitState, setWaitState] = useState(false)
+    const [loadingState, setLoadingState] = useState(false)
+
+    const [nameState, setNameState] = useState('')
+    const [emailState, setEmailState] = useState('')
+    const [messageState, setMessageState] = useState('')
+
     return (
         <div className={styles.wrapper}>
             <div className={styles.firstSection}>
@@ -20,6 +33,8 @@ const Contacts = () => {
                             <p>бул.Кольцова, 14Д, офіс 610</p>
                             <p>тел./факс: (+38067) 504-27-71</p>
                             <p> e-mail: vlastbud9@gmail.com</p>
+
+                            <button onClick={()=>{setFormState(!formState)}} className={styles.addresButton}>Залишити повiдомлення</button>
                         </div>
 
                         <section className={styles.mapSection}>
@@ -40,7 +55,94 @@ const Contacts = () => {
                 </div>
                 <div className={styles.footer}><Footer /></div>
             </div>
+            {formState && (
+                <div className={styles.formWrapper}>
+                    <div className={styles.form}>
+                        <svg className={styles.formSvg} onClick={()=>{setFormState(!formState)}} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                            <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
+                        </svg>
 
+                        <div className={styles.userDataBlock}>
+                            <div className={styles.name}>
+                                <span>Ваше Iм'я</span>
+                                <input onChange={(e) => {setNameState(e.target.value)}} value={nameState} placeholder='Петро Петров'></input>
+                            </div>
+                            <div className={styles.email}>
+                                <span>Ваш Email</span>
+                                <input onChange={(e) => {setEmailState(e.target.value)}} value={emailState} placeholder='petro123@gmail.com'></input>
+                            </div>
+                        </div>
+
+                        <div className={styles.messageBlock}>
+                            <span>Ваше Повiдомлення</span>
+                            <textarea onChange={(e) => {setMessageState(e.target.value)}} value={messageState}></textarea>
+                        </div>
+
+                        <button className={styles.send} onClick={()=>{
+
+                            const currentDate = new Date();
+                            const currentTimeInMillis = currentDate.getTime();
+                            const currentTimeInSeconds = Math.floor(currentTimeInMillis / 1000);
+
+                            API.sendMessage({id: currentTimeInSeconds, name: nameState, email: emailState, date: format(new Date(), 'dd-MM-yyyy'), body: messageState}).then(response => {
+                                if(response.status === 200){
+                                    setLoadingState(false)
+                                    setOkState(true);
+                                }else if(response.status === 429){
+                                    setLoadingState(false)
+                                    setWaitState(true);
+                                }
+                                
+                              })
+                              .catch(error => {
+                                // Обработка ошибки
+                                setLoadingState(false)
+                                setWaitState(true);
+                              });
+
+                            
+                            setLoadingState(true)
+                            setNameState('')
+                            setEmailState('')
+                            setMessageState('')
+
+                            
+                        }}>Надiслати</button>
+                        
+
+                        {okState && (
+                        <div className={styles.okWrapper}>
+                            <span>Повiдомлення надiслано!</span>
+                            <div className={styles.okSvg}>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+                                    <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                                </svg> 
+                            </div>
+                            
+
+                            <button onClick={()=>{
+                                setFormState(false)
+                                setOkState(false)
+                                }}>Повернутись</button>
+                        </div>)}
+
+                        {waitState && (
+                        <div className={styles.okWrapper}>
+                            <span className={styles.waitErrorSpan}>Повiдомлення можна надсилати раз на 10 хвилин</span>
+
+                            <button onClick={()=>{
+                                setFormState(false)
+                                setWaitState(false)
+                                }}>Повернутись</button>
+                        </div>)}
+
+                        {loadingState && (
+                        <div className={styles.okWrapper}>
+                            <img src={loading} />
+                        </div>)}
+                    </div>
+            </div>
+            )}
         </div>
     )
 }

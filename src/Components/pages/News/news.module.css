@@ -117,13 +117,14 @@
     width: 80%;
     height: 70px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 100px;
+    justify-content: center;
     transition: 0.3s;
 
     .date {
         position: absolute;
-        right: 10px;
+        top: 0px;
         color: rgb(136, 136, 136);
         font-size: 15px;
     }
@@ -176,11 +177,12 @@
 
 .newsCardWrapper svg {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 15px;
+    right: 15px;
     z-index: 1000;
     color: black;
-    transform: scale(0.9);
+    transform: scale(1.9);
+    cursor: pointer;
 }
 
 
@@ -242,3 +244,4 @@
         }
     }
 }
+

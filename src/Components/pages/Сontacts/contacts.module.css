@@ -4,6 +4,7 @@
 }
 
 .wrapper{
+    position: relative;
     user-select: none;
     width: 100%;
 
@@ -99,15 +100,182 @@
 
 .addres{
     text-align: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content:center;
     width: 50%;
 
 }
+.addresButton{
+    cursor: pointer;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 15px;
+    border: rgb(146, 146, 146) solid 1px;
+    margin-top: 30px;
+    width: 50%;
+    transition: 0.2s;
+}
+.addresButton:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0  5px rgb(109, 109, 109);
+    background-color: rgba(0, 255, 0, 0.205);
+}
 
 .mapSection{
     width: 50%;
+}
+
+.formWrapper{
+    position: absolute;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.527);
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form{
+    padding: 20px;
+    position: relative;
+    width: 60%;
+    height: 65%;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgb(155, 155, 155);
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.form svg{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    transform: scale(1.8);
+    cursor: pointer;
+}
+.userDataBlock{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.name{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.email{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.name span, .email span{
+    font-size: 15px;
+    margin-left: 8px;
+}
+.name input, .email input{
+    padding: 7px;
+    border-radius: 10px;
+    border: rgb(126, 126, 126) solid 1px;
+}
+
+.messageBlock{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.messageBlock span{
+    font-size: 20px;
+}
+.messageBlock textarea{
+    padding: 10px;
+    resize: none;
+    width: 90%;
+    height: 100%;
+    border-radius: 10px;
+    border: rgb(122, 122, 122) solid 1px;
+}
+
+.send{
+    font-size: 18px;
+    width: 30%;
+    height: 45px;
+    border-radius: 15px;
+    border: rgb(131, 131, 131) solid 1px;
+    transition: 0.2s;
+}
+.send:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 5px rgb(126, 126, 126);
+    background-color: rgba(13, 196, 13, 0.322);
+}
+
+.okWrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.okWrapper span{
+    font-size: 25px;
+    color: rgb(44, 10, 10);
+}
+
+.okWrapper img{
+    width: 100px;
+    height: 100px;
+}
+.okWrapper button{
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 15px;
+    border: rgb(110, 110, 110) solid 1px;
+    font-size: 25px;
+    color: rgb(44, 10, 10);
+    transition: 0.2s;
+}
+.okWrapper button:hover{
+    box-shadow: 0 0 5px rgb(128, 128, 128);
+    transform: scale(1.03);
+    background-color: rgba(13, 196, 13, 0.322);
+}
+.okSvg{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.okSvg svg{
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 70%;
+    color: greenyellow;
+}
+.waitErrorSpan{
+    margin-bottom: 50px;
 }
 
 @keyframes fadeInUp {
@@ -165,12 +333,44 @@
         display: flex;
         flex-direction: column;
         justify-content:center;
-        width: 100%;
-    
+        width: 100%;    
     }
-    
     .mapSection{
         width: 100%;
     }
-    
+    .addresButton{
+        font-size: 14px;
+        width: 80%;
+    }
+    .userDataBlock{
+        display: flex;
+        flex-direction: column;
+    }
+    .name{
+        width: 100%;
+    }
+    .email{
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .messageBlock{
+        margin-bottom: 20px;
+    }
+    .okWrapper span{
+        font-size: 20px;
+        color: rgb(44, 10, 10);
+    }
+    .okWrapper{
+        text-align: center;
+    }
+
+    .okSvg{
+        width: 70%;
+    }
+    .okWrapper button{
+        font-size: 18px;
+    }
+    .send{
+        width: 80%;
+    }
 }

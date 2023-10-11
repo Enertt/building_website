@@ -64,8 +64,11 @@ const SwiperComponent = () => {
             <div className={styles.gradient}></div>
 
             <div className={styles.textBlock}>
-              <div className={styles.title}>Some title</div>
-              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+              <div className={styles.title}>Будівництво</div>
+              <div className={styles.description}>Проведення тендерів та укладення договорів із генеральною
+проектною організацією.
+Визначення основної стратегії будівництва (генеральний графік
+будівництва та фінансування)...</div>
             </div>
           </div>
           </div>
@@ -81,8 +84,9 @@ const SwiperComponent = () => {
               <div className={styles.gradient}></div>
 
               <div className={styles.textBlock}>
-                <div className={styles.title}>Some title</div>
-                <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+                <div className={styles.title}>Землевідведення</div>
+                <div className={styles.description}>Розробка проєкту відведення земельної ділянки.<br/>
+Оформлення права власності або оренди земельної ділянки</div>
               </div>
             </div>
           </div>
@@ -97,8 +101,9 @@ const SwiperComponent = () => {
             <div className={styles.gradient}></div>
 
             <div className={styles.textBlock}>
-              <div className={styles.title}>Some title</div>
-              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+              <div className={styles.title}>Розроблення концепцій</div>
+              <div className={styles.description}>Розроблення концепції майбутнього проєкту Роботи, що виконуються до початку проектування. Коефіцієнт забудови ділянки.
+Розробка принципових об'ємно-просторових рішень.</div>
             </div>
           </div>
           </div>
@@ -112,8 +117,8 @@ const SwiperComponent = () => {
             <div className={styles.gradient}></div>
 
             <div className={styles.textBlock}>
-              <div className={styles.title}>Some title</div>
-              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+              <div className={styles.title}>Супровід проектування</div>
+              <div className={styles.description}>Збір і підготовка вихідних даних: - АПЗ. Стадія «П» (Проект) Розділи проекту. Стадія «Р» (розробка робочої документації)</div>
             </div>
           </div>
           </div>
@@ -127,8 +132,11 @@ const SwiperComponent = () => {
             <div className={styles.gradient}></div>
 
             <div className={styles.textBlock}>
-              <div className={styles.title}>Some title</div>
-              <div className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.</div>
+              <div className={styles.title}>Маркетинг</div>
+              <div className={styles.description}>Прогнозування інвестиційних очікувань. Вивчення конкурентного середовища.
+Статистичні дані.
+Прогнозування ступеня затребуваності проекту потенційними споживачами.
+Альтернативні концепції.</div>
             </div>
           </div>
           </div>

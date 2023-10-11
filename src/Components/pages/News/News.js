@@ -12,23 +12,27 @@ const News = (props) => {
     props.getNewsThunkCreator();
   }
 
-  const [propsState, setPropsState] = useState({ title: "", body: [] });
+  const [propsState, setPropsState] = useState({
+    title: "",
+    date: "",
+    body: [],
+  });
   const [visibilityState, setVisibilityState] = useState({
     pageVisibility: true,
     newsVisibility: false,
   });
 
-  debugger;
   const news = props.newsData ? (
     props.newsData.map((element) => {
       return (
         <div
           onClick={() => {
-            setVisibilityState({
-              pageVisibility: false,
-              newsVisibility: true,
+            setVisibilityState({ pageVisibility: false, newsVisibility: true });
+            setPropsState({
+              title: element.title,
+              date: element.date,
+              body: element.body,
             });
-            setPropsState({ title: element.title, body: element.body });
           }}
           className={styles.newsElement}
         >
@@ -46,10 +50,6 @@ const News = (props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.firstSection}>
-        {/* <Header color={''}/>  FOR BLACK*/}
-        {/* <Header color={'white'}/>  FOR WHITE*/}
-        <Header color={"white"} />
-
         <div className={styles.textWrapper}>
           <div className={styles.content}>
             <div

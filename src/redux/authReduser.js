@@ -2,10 +2,11 @@ import { API } from "../api/api";
 
 // Actions
 const LOGIN = 'LOGIN';
-
+const APP = 'APP'
 
 let initialState = {
     isAuth: false,
+    // state: null
 };
 
 const authReduser = (state = initialState, action) => {
@@ -16,6 +17,12 @@ const authReduser = (state = initialState, action) => {
                 ...state,
                 isAuth: action.newState,
             };
+
+        // case APP:
+        //     return {
+        //         ...state,
+        //         state: action.state,
+        //     };
         // case SET_USERS:
         //     let newUsers = [...action.users]
         //     let stateCopy = { ...state, users: newUsers }
@@ -49,14 +56,14 @@ const authReduser = (state = initialState, action) => {
 
 // Action Creators
 export const loginAC = (newState) => ({ type: LOGIN, newState });
+// export const appAC = (state) => ({ type: APP, state });
 
-// export const tokenThunkCreator = (token) => {
-// debugger
+// export const getAppStateThunkCreator = () => {
 //     return (dispatch) => {
-//         API.checkToken(token).then(response => {
+//         API.getState().then(response => {
 //             if(response.status === 200){
-//                 dispatch(loginAC(true))
-//             }else{dispatch(loginAC(false))}
+//                 dispatch(appAC(response.state))
+//             }
 //         });
 //     }
 // }
