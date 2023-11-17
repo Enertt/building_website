@@ -40,7 +40,7 @@ const FaceOfCompany = () => {
                             </div> */}
 
 
-                            <div className={styles.additional_info}>
+                            {/* <div className={styles.additional_info}>
                                 <div className={styles.list}>
                                     <div className={styles.listItem}>
                                         <span className={styles.spanTitle}>РОКИ ДОСВIДУ</span>
@@ -57,7 +57,7 @@ const FaceOfCompany = () => {
                                         <span className={styles.spanNumber}>30+</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
 
                         <div className={styles.sectionTwo}>

@@ -132,7 +132,7 @@
     text-align: center;
     margin-bottom: 40px;
 }
-.optionCardImgL{
+/* .optionCardImgL{
     float: left;
     width: 30%;
     margin: 10px;
@@ -148,7 +148,7 @@
 .optionCard p{
 
     
-}
+} */
 .optionCard span{
     position: relative;
     font-size: 25px;
