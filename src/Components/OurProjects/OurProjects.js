@@ -20,7 +20,7 @@ const OurProjects = () => {
                   </div>
                 </NavLink>
         
-                <NavLink to='/projects'>
+                {/* <NavLink to='/projects'>
                   <div className={styles.card}>
                     <div className={styles.yellow}>
                       <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 64 80" x="0px" y="0px">
@@ -40,7 +40,7 @@ const OurProjects = () => {
                     </div>
                     <h3>Реконструюємо</h3>
                   </div>
-                </NavLink>
+                </NavLink> */}
         
               </div>
         

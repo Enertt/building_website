@@ -35,9 +35,9 @@ const FaceOfCompany = () => {
                                 </p>
                             </div>
 
-                            {/* <div className={styles.photo}>
+                            <div className={styles.photo}>
                                 <img className={styles.img}/>
-                            </div> */}
+                            </div>
 
 
                             {/* <div className={styles.additional_info}>
